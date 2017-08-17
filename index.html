@@ -17,6 +17,12 @@
             integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
             crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.8.0/github-markdown.min.css"
+            integrity="sha256-Lt9340Td+22fUGyXnrvSDEy9lnZunEDDyYyQ3QOGgeg="
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hopscotch.min.css"
+            integrity="sha256-OZFGoV+SbF0roYgCQ/7NLg1KsehO4jHKqrX5uCsH7+Q="
+            crossorigin="anonymous" />
 
         <style>
             html {
@@ -27,14 +33,53 @@
                 color: hsl(348, 100%, 61%);
             }
 
+            a:hover {
+                color: hsl(348, 60%, 61%)
+            }
+
+            .markdown-body a {
+                color: #0366d6;
+            }
+
             .container {
                 max-width: 800px;
             }
 
-            #faq {
-                padding-top: 3em;
-                padding-bottom: 3em;
-                margin-bottom: 0px;
+            #template, #faq {
+                background-color: hsl(0, 0%, 21%);
+            }
+
+            textarea {
+                margin: auto;
+                display: block;
+                width: 100%;
+                max-width: 550px;
+                min-height: 650px;
+                border-radius: 10px;
+                font-size: 14px;
+                font-family: Consolas, monaco, monospace;
+                resize: none;
+                outline: none;
+                border: none;
+                padding: 20px;
+            }
+
+            #rendered {
+                margin: auto;
+                display: block;
+                width: 100%;
+                border-radius: 10px;
+                max-width: 550px;
+                background-color: white;
+                padding: 20px;
+            }
+
+            #rendered ul {
+                list-style: unset;
+            }
+
+            #rendered code {
+                color: #24292e;
             }
 
             article {
@@ -159,7 +204,54 @@
             </div>
         </section>
 
-        <hr>
+        <section id="template" class="section">
+            <h2 class="title has-text-centered has-text-light">
+                Template
+            </h2>
+
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-4 has-text-centered has-text-light">
+                        Input (editable)
+                    </h3>
+<textarea>
+# Foobar
+Foobar is a Python library for doing awesome things with strings.
+
+## Installation
+
+### Requirements
+* Linux
+* Python 3.3 and up
+
+`$ pip install foobar`
+
+## Usage
+
+```python
+import foobar
+
+foobar.awesome_method('baz')
+```
+
+## Development
+```
+$ virtualenv foobar
+$ . foobar/bin/activate
+$ pip install -e .
+```
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)</textarea>
+                </div>
+                <div class="column">
+                    <h3 class="title is-4 has-text-centered has-text-light">
+                        Rendered
+                    </h3>
+                    <div id="rendered" class="markdown-body"></div>
+                </div>
+            </div>
+        </section>
 
         <section class="section">
             <div class="container">
@@ -211,8 +303,8 @@
             </div>
         </section>
 
-        <div id="faq" class="notification is-dark">
-            <h2 class="title has-text-centered">
+        <section id="faq" class="section">
+            <h2 class="title has-text-centered has-text-light">
                 FAQ
             </h2>
 
@@ -250,7 +342,7 @@
                     or send me a message on <a href="https://twitter.com/dannyguo">Twitter</a>.
                 </div>
             </article>
-        </div>
+        </section>
 
         <footer class="footer content has-text-centered"
             style="margin-bottom: 0px; padding-top: 2em; padding-bottom: 2em;">
@@ -268,9 +360,41 @@
             integrity="sha256-IIBK1RbiuIOupfHrJfQebLj0mBGUVNm41I4l8WWPPj8="
             crossorigin="anonymous">
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"
+            integrity="sha256-ltAts6+/XysEs9E5RF/t0H+0eD3ET6NpbqzshWkqeic="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+            integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw="
+            crossorigin="anonymous">
+        </script>
+
         <script>
             anchors.options.placement = 'left';
             anchors.add();
+
+            var md = new Remarkable({
+                highlight: function (str, lang) {
+                    if (lang && hljs.getLanguage(lang)) {
+                        try {
+                            return hljs.highlight(lang, str).value;
+                        } catch (err) {}
+                    }
+
+                    try {
+                        return hljs.highlightAuto(str).value;
+                    } catch (err) {}
+
+                    return ''; // use external default escaping
+                }
+            });
+
+            var rendered = document.querySelector('#rendered');
+            rendered.innerHTML = md.render(document.querySelector('textarea').textContent);
+
+            document.querySelector('textarea').addEventListener('keyup', function (e) {
+                rendered.innerHTML = md.render(e.target.value);
+            });
         </script>
     </body>
 </html>
