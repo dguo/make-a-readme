@@ -29,12 +29,14 @@
                 font-family: 'Open Sans', sans-serif;
             }
 
-            a {
+            a, #yet, .message a:not(.button) {
                 color: hsl(348, 100%, 61%);
+                text-decoration: none;
             }
 
-            a:hover {
-                color: hsl(348, 60%, 61%)
+            a:hover, #yet:hover, .message a:not(.button):hover {
+                color: hsl(348, 60%, 61%);
+                text-decoration: none;
             }
 
             .markdown-body a {
@@ -82,6 +84,10 @@
                 color: #24292e;
             }
 
+            .message-header {
+                padding-left: 1.25em;
+            }
+
             article {
                 max-width: 600px;
                 margin: auto;
@@ -117,7 +123,7 @@
                     Make a README
                 </h1>
                 <p class="subtitle is-4">
-                    Because no one can read your mind<a href="#">*</a>
+                    Because no one can read your mind (<a id="yet" href="#mind-reading">yet</a>)
                 </p>
             </div>
         </section>
@@ -325,9 +331,9 @@ $ pip install -e .
             </h2>
 
             <article class="message is-warning">
-                <div class="message-header">
+                <h3 class="message-header">
                     Is there a standard README format?
-                </div>
+                </h3>
                 <div class="message-body">
                     Nope. It's really up to developers what info they want to
                     include in the README.
@@ -335,9 +341,9 @@ $ pip install -e .
             </article>
 
             <article class="message is-warning">
-                <div class="message-header">
+                <h3 class="message-header">
                     What should the README file be named?
-                </div>
+                </h3>
                 <div class="message-body">
                     <code>README.md</code> (or a different file extension if you
                     choose to use a non-Markdown file format). It is
@@ -348,14 +354,29 @@ $ pip install -e .
             </article>
 
             <article class="message is-warning">
-                <div class="message-header">
+                <h3 class="message-header">
                     What if I disagree with something, want to make a change, or
                     have any other feedback?
-                </div>
+                </h3>
                 <div class="message-body">
                     Please don't hesitate to <a href="https://github.com/dguo/make-a-readme/issues">open an issue</a>
                     or <a href="https://github.com/dguo/make-a-readme/pulls">pull request</a>,
                     or send me a message on <a href="https://twitter.com/dannyguo">Twitter</a>.
+                </div>
+            </article>
+
+            <article class="message is-warning">
+                <h3 class="message-header">
+                    Mind reading?
+                </h3>
+                <div class="message-body">
+                    <a href="https://www.usatoday.com/story/tech/2014/04/22/mind-reading-brain-scans/7747831/">Scientists</a>
+                    and companies like
+                    <a href="https://www.theverge.com/2017/4/20/15375176/facebook-regina-dugan-interview-building-8-mind-reading-f8-2017">Facebook</a>
+                    and <a href="https://www.neuralink.com/">Neuralink</a> (presumably) are working on it.
+                    Perhaps in the future, you'll be able to attach a copy of your
+                    thoughts and/or consciousness to your projects. In the meantime,
+                    please make READMEs. :)
                 </div>
             </article>
         </section>
@@ -387,6 +408,10 @@ $ pip install -e .
 
         <script>
             anchors.options.placement = 'left';
+            // One of the longer FAQ questions doesn't work with the default
+            // truncate value. The anchor link looks fine, but Chrome doesn't
+            // jump to it when loading in a new tab.
+            anchors.options.truncate = 50;
             anchors.add();
 
             var md = new Remarkable({
