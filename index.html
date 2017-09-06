@@ -13,79 +13,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.8.0/github-markdown.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hopscotch.min.css" />
-
-        <style>
-            html {
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            a, #yet, .message a:not(.button) {
-                color: hsl(348, 100%, 61%);
-                text-decoration: none;
-            }
-
-            a:hover, #yet:hover, .message a:not(.button):hover {
-                color: hsl(348, 60%, 61%);
-                text-decoration: none;
-            }
-
-            .markdown-body a {
-                color: #0366d6;
-            }
-
-            .container {
-                max-width: 800px;
-            }
-
-            #template, #faq {
-                background-color: hsl(0, 0%, 21%);
-            }
-
-            textarea {
-                margin: auto;
-                display: block;
-                width: 100%;
-                max-width: 550px;
-                border-radius: 10px;
-                font-size: 14px;
-                font-family: Consolas, monaco, monospace;
-                resize: none;
-                outline: none;
-                border: none;
-                padding: 20px;
-            }
-
-            #rendered {
-                margin: auto;
-                display: block;
-                width: 100%;
-                border-radius: 10px;
-                max-width: 550px;
-                background-color: white;
-                padding: 20px;
-            }
-
-            #rendered ul {
-                list-style: unset;
-            }
-
-            #rendered code, .message-body code {
-                color: #24292e;
-            }
-
-            .message-header {
-                padding-left: 1.25em;
-            }
-
-            .message-body code {
-                background-color: rgba(27,31,35,.05);
-            }
-
-            article {
-                max-width: 600px;
-                margin: auto;
-            }
-        </style>
+        <link rel="stylesheet" href="index.css" />
 
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -578,38 +506,5 @@ Please make sure to update tests as appropriate.
             crossorigin="anonymous">
         </script>
 
-        <script>
-            anchors.options.placement = 'left';
-            // One of the longer FAQ questions doesn't work with the default
-            // truncate value. The anchor link looks fine, but Chrome doesn't
-            // jump to it when loading in a new tab.
-            anchors.options.truncate = 50;
-            anchors.add();
-
-            var md = new Remarkable({
-                highlight: function (str, lang) {
-                    if (lang && hljs.getLanguage(lang)) {
-                        try {
-                            return hljs.highlight(lang, str).value;
-                        } catch (err) {}
-                    }
-
-                    try {
-                        return hljs.highlightAuto(str).value;
-                    } catch (err) {}
-
-                    return ''; // use external default escaping
-                }
-            });
-
-            var rendered = document.querySelector('#rendered');
-            rendered.innerHTML = md.render(document.querySelector('textarea').textContent);
-
-            document.querySelector('textarea').addEventListener('keyup', function (e) {
-                rendered.innerHTML = md.render(e.target.value);
-            });
-
-            autosize(document.querySelector('textarea'));
-        </script>
+        <script src="index.js"></script>
     </body>
-</html>

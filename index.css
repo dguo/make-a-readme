@@ -1,0 +1,70 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a, #yet, .message a:not(.button) {
+    color: hsl(348, 100%, 61%);
+    text-decoration: none;
+}
+
+a:hover, #yet:hover, .message a:not(.button):hover {
+    color: hsl(348, 60%, 61%);
+    text-decoration: none;
+}
+
+.markdown-body a {
+    color: #0366d6;
+}
+
+.container {
+    max-width: 800px;
+}
+
+#template, #faq {
+    background-color: hsl(0, 0%, 21%);
+}
+
+textarea {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Consolas, monaco, monospace;
+    resize: none;
+    outline: none;
+    border: none;
+    padding: 20px;
+}
+
+#rendered {
+    margin: auto;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    max-width: 550px;
+    background-color: white;
+    padding: 20px;
+}
+
+#rendered ul {
+    list-style: unset;
+}
+
+#rendered code, .message-body code {
+    color: #24292e;
+}
+
+.message-header {
+    padding-left: 1.25em;
+}
+
+.message-body code {
+    background-color: rgba(27, 31, 35, .05);
+}
+
+article {
+    max-width: 600px;
+    margin: auto;
+}
