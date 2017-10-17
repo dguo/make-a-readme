@@ -154,7 +154,7 @@
 <textarea>
 # Foobar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-Foobar is a Python library for doing awesome things with strings.
+Foobar is a Python library for dealing with word pluralization.
 
 ## Installation
 
@@ -169,7 +169,9 @@ Foobar is a Python library for doing awesome things with strings.
 ```python
 import foobar
 
-foobar.awesome_method('baz')
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
 ## Development
