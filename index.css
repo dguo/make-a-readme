@@ -20,6 +20,10 @@ h3, p {
     margin-top: 1em;
 }
 
+footer p {
+    margin-top: 0;
+}
+
 .markdown-body a {
     color: #0366d6;
 }
