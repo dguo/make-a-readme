@@ -36,28 +36,24 @@ footer p {
     background-color: hsl(0, 0%, 21%);
 }
 
-textarea {
+textarea, #rendered {
     margin: auto;
     display: block;
-    width: 100%;
-    max-width: 550px;
+    width: 95%;
+    padding: 20px;
     border-radius: 10px;
+}
+
+textarea {
     font-size: 14px;
     font-family: Consolas, monaco, monospace;
     resize: none;
     outline: none;
     border: none;
-    padding: 20px;
 }
 
 #rendered {
-    margin: auto;
-    display: block;
-    width: 100%;
-    border-radius: 10px;
-    max-width: 550px;
     background-color: white;
-    padding: 20px;
 }
 
 #rendered ul {
