@@ -13,7 +13,12 @@ Make a README is inspired by [Keep a Changelog](http://keepachangelog.com/).
 
 ## Contributing
 Please feel free to submit an issue or pull request. The website is simple
-enough to not require a build process. Just open `index.html` in a browser.
+enough to not require a build process. Just open `public/index.html` in a
+browser.
+
+If you want [live reloading](https://github.com/tapio/live-server) and have
+Node installed, run `$ yarn install && yarn start`. If you have Python and
+Docker installed, you can run `$ ./dev start` instead.
 
 ## License
 [MIT](https://github.com/dguo/make-a-readme/blob/master/LICENSE)

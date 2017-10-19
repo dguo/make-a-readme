@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# ./dev --help
+
+import argparse
+import os
+from subprocess import call
+import sys
+
+parser = argparse.ArgumentParser(prog='./dev')
+subparsers = parser.add_subparsers(metavar='<command>', title='commands')
+
+def run(port=False):
+    command = ['docker', 'run', '--init', '-it', '--rm', '-v',
+              os.getcwd() + ':/src:cached', '-w=/src']
+    if port:
+        command += ['-p', '127.0.0.1:8080:8080']
+
+    command.append('node:8.6.0-alpine')
+
+    return command
+
+def start(args, remaining):
+    call(run(True) + ['yarn', 'start'])
+parser_start = subparsers.add_parser('start',
+    help='start a development environment')
+parser_start.set_defaults(func=start)
+
+def sh(args, remaining):
+    call(run() + ['sh'])
+parser_sh = subparsers.add_parser('sh', help='bring up a shell')
+parser_sh.set_defaults(func=sh)
+
+def yarn(args, remaining):
+    call(run() + ['yarn'] + remaining or [])
+parser_yarn = subparsers.add_parser('yarn', help='run a yarn command')
+parser_yarn.set_defaults(func=yarn)
+
+if len(sys.argv) > 1:
+    args, remaining = parser.parse_known_args()
+    args.func(args, remaining)
+else:
+    parser.print_help()
