@@ -1,5 +1,5 @@
-# [Make a README](https://makeareadme.com)
-Make a README is a simple website that explains what a README is, what the
+# Make a README
+[Make a README](https://makeareadme.com) explains what a README is, what the
 benefits are, and what makes for a good README. It also provides an editable
 template, with live Markdown rendering.
 
