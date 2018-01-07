@@ -2,12 +2,28 @@
 # ./dev --help
 
 import argparse
+from http.client import HTTPException
 import os
 from subprocess import call
 import sys
+from threading import Thread
+import time
+from urllib.error import URLError
+from urllib.request import urlopen
+import webbrowser
 
 parser = argparse.ArgumentParser(prog='./dev')
 subparsers = parser.add_subparsers(metavar='<command>', title='commands')
+
+def open_in_browser():
+    site = 'http://localhost:8080'
+    while True:
+        try:
+            urlopen(site)
+            webbrowser.open(site)
+            return
+        except (URLError, HTTPException):
+            time.sleep(1)
 
 def run(port=False):
     command = ['docker', 'run', '--init', '-it', '--rm', '-v',
@@ -15,11 +31,12 @@ def run(port=False):
     if port:
         command += ['-p', '127.0.0.1:8080:8080']
 
-    command.append('node:8.6.0-alpine')
+    command.append('node:8.9.3-alpine')
 
     return command
 
 def start(args, remaining):
+    Thread(target=open_in_browser).start()
     call(run(True) + ['yarn', 'start'])
 parser_start = subparsers.add_parser('start',
     help='start a development environment')
