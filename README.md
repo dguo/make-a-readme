@@ -11,6 +11,11 @@ can matter more than we might think.
 
 Make a README is inspired by [Keep a Changelog](http://keepachangelog.com/).
 
+## Related Resources
+* [Art of README](https://github.com/noffle/art-of-readme)
+* [Awesome README](https://github.com/matiassingers/awesome-readme)
+* [Standard Readme](https://github.com/RichardLitt/standard-readme)
+
 ## Contributing
 Please feel free to submit an issue or pull request. The website is simple
 enough to not require a build process. Just open `public/index.html` in a
