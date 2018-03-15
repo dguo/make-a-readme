@@ -22,7 +22,7 @@ def open_in_browser():
             urlopen(site)
             webbrowser.open(site)
             return
-        except (URLError, HTTPException):
+        except (ConnectionError, URLError, HTTPException):
             time.sleep(1)
 
 def run(port=False):

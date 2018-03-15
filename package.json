@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-      "start": "live-server --no-browser public"
+      "start": "yarn install && live-server --no-browser public"
   },
   "repository": "https://github.com/dguo/make-a-readme",
   "author": "Danny Guo",
