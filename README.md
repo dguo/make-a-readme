@@ -16,6 +16,13 @@ Make a README is inspired by [Keep a Changelog](http://keepachangelog.com/).
 * [Awesome README](https://github.com/matiassingers/awesome-readme)
 * [Standard Readme](https://github.com/RichardLitt/standard-readme)
 
+## Roadmap
+
+- Translate the website
+- Create an interactive README generator ([#15](https://github.com/dguo/make-a-readme/issues/15))
+- Link to great examples ([#14](https://github.com/dguo/make-a-readme/issues/14))
+- check and improve accessibility
+
 ## Contributing
 Please feel free to submit an issue or pull request. The website is simple
 enough to not require a build process. Just open `public/index.html` in a
