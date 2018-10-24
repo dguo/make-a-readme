@@ -151,17 +151,17 @@
                         Markdown Input (editable)
                     </h3>
 <textarea>
-# Foobar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+# Foobar
 
 Foobar is a Python library for dealing with word pluralization.
 
 ## Installation
 
-### Requirements
-* Linux
-* Python 3.3 and up
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-`$ pip install foobar`
+```bash
+pip install foobar
+```
 
 ## Usage
 
@@ -171,13 +171,6 @@ import foobar
 foobar.pluralize('word') # returns 'words'
 foobar.pluralize('goose') # returns 'geese'
 foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Development
-```
-$ virtualenv foobar
-$ . foobar/bin/activate
-$ pip install -e .
 ```
 
 ## Contributing
@@ -205,7 +198,8 @@ Please make sure to update tests as appropriate.
 
                 <p>
                     Every project is different, so consider which of these
-                    suggestions apply to yours. Also keep in mind that while a
+                    sections apply to yours. The sections used in the template
+                    are suggested to have. Also keep in mind that while a
                     README can be too long and detailed, too long is better
                     than too short. If you think your README is too long, consider
                     utilizing
@@ -214,11 +208,22 @@ Please make sure to update tests as appropriate.
                 </p>
 
                 <h3 class="title is-4">
-                    Name and description
+                    Name
                 </h3>
                 <p>
-                    Make it immediately obvious what your project does at a
-                    high level.
+                    Choose a self-explaining name for your project.
+                </p>
+
+                <h3 class="title is-4">
+                    Description
+                </h3>
+                <p>
+                    Let people know what your project can do specifically.
+                    Provide context and add a link to any reference visitors
+                    might be unfamiliar with.
+                    A list of <b>Features</b> or a <b>Background</b> subsection
+                    can also be added here. If there are alternatives to your project,
+                    this is a good place to list differentiating factors.
                 </p>
 
                 <h3 class="title is-4">
@@ -231,15 +236,6 @@ Please make sure to update tests as appropriate.
                     <a href="http://shields.io/">Shields</a>
                     to add some to your README. Many services also have
                     instructions for adding a badge.
-                </p>
-
-                <h3 class="title is-4">
-                    Features
-                </h3>
-                <p>
-                    Let people know what your project can do specifically. If
-                    there is an alternative to your project, this is a good
-                    place to list differentiating factors.
                 </p>
 
                 <h3 class="title is-4">
@@ -256,17 +252,6 @@ Please make sure to update tests as appropriate.
                 </p>
 
                 <h3 class="title is-4">
-                    Requirements
-                </h3>
-                <p>
-                    If your project only works in a certain context, it's important
-                    to be upfront about its requirements. Otherwise, someone may
-                    try to use your project, only to discover that it requires
-                    a certain version of a language or a particular operating
-                    system.
-                </p>
-
-                <h3 class="title is-4">
                     Installation
                 </h3>
                 <p>
@@ -279,6 +264,10 @@ Please make sure to update tests as appropriate.
                     your README is a novice and would like more guidance.
                     Listing specific steps helps remove ambiguity and gets
                     people to using your project as quickly as possible.
+                    If it only runs in a specific context like
+                    version of programming language or type of operating system
+                    or has dependencies that has to be installed manually,
+                    also add a <b>Requirements</b> subsection.
                 </p>
 
                 <h3 class="title is-4">
@@ -302,8 +291,20 @@ Please make sure to update tests as appropriate.
                 </p>
 
                 <h3 class="title is-4">
-                    Development
+                    Roadmap
                 </h3>
+                <p>
+                    If you have ideas for releases in the future, it is a good
+                    idea to list them in the README.
+                </p>
+
+                <h3 class="title is-4">
+                    Contributing
+                </h3>
+                <p>
+                    State if you are open to contributions and
+                    what your requirements are for accepting them.
+                </p>
                 <p>
                     For people who want to make changes to your project,
                     it's helpful to have some documentation on how to get
@@ -324,22 +325,6 @@ Please make sure to update tests as appropriate.
                     setup, such as starting a
                     <a href="http://www.seleniumhq.org/">Selenium</a> server for
                     testing in a browser.
-                </p>
-
-                <h3 class="title is-4">
-                    Roadmap
-                </h3>
-                <p>
-                    If you have ideas for releases in the future, it is a good
-                    idea to list them in the README.
-                </p>
-
-                <h3 class="title is-4">
-                    Contributing back
-                </h3>
-                <p>
-                    If you are open to contributions from others, let them know
-                    what your requirements are for accepting contributions.
                 </p>
 
                 <h3 class="title is-4">
