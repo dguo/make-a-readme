@@ -20,7 +20,13 @@ h3, p {
     margin-top: 1em;
 }
 
-footer p {
+#footer {
+    margin-bottom: 0px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#footer p {
     margin-top: 0;
 }
 
