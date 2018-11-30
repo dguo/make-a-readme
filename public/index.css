@@ -20,6 +20,10 @@ h3, p {
     margin-top: 1em;
 }
 
+.ad-separator {
+    border-bottom: 2px solid hsl(0, 0%, 90%);
+}
+
 #footer {
     margin-bottom: 0px;
     padding-top: 2em;
