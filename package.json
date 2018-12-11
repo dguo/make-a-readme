@@ -5,6 +5,7 @@
     "scripts": {
         "format": "prettier --write package.json public/*",
         "format:check": "prettier --list-different package.json public/*",
+        "lint:html": "htmlhint ./**/*.html",
         "start": "yarn install && live-server --no-browser public"
     },
     "repository": "https://github.com/dguo/make-a-readme",
@@ -12,6 +13,7 @@
     "license": "MIT",
     "private": true,
     "devDependencies": {
+        "htmlhint": "0.10.1",
         "live-server": "1.2.1",
         "prettier": "1.15.3"
     },
