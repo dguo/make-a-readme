@@ -2,15 +2,14 @@
   "name": "make-a-readme",
   "description": "Website for explaining what a README is",
   "version": "0.1.0",
-  "main": "index.js",
   "scripts": {
-      "start": "yarn install && live-server --no-browser public"
+    "start": "yarn install && live-server --no-browser public"
   },
   "repository": "https://github.com/dguo/make-a-readme",
   "author": "Danny Guo",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "live-server": "1.2.0"
+    "live-server": "1.2.1"
   }
 }
