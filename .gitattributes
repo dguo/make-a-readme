@@ -1,0 +1,4 @@
+# Handle line endings in Git
+* text=auto
+*.ico binary
+*.png binary
