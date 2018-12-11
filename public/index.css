@@ -2,6 +2,8 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* stylelint-disable no-descending-specificity */
+
 a,
 #yet,
 .message a:not(.button):not(.tag) {
@@ -15,6 +17,12 @@ a:hover,
     color: hsl(348, 60%, 61%);
     text-decoration: none;
 }
+
+.markdown-body a {
+    color: #0366d6;
+}
+
+/* stylelint-enable */
 
 h1 {
     margin-top: 0.5em;
@@ -37,10 +45,6 @@ p {
 
 #footer p {
     margin-top: 0;
-}
-
-.markdown-body a {
-    color: #0366d6;
 }
 
 .container {
@@ -77,17 +81,17 @@ textarea {
     list-style: unset;
 }
 
-#rendered code,
 .message-body code {
+    background-color: rgba(27, 31, 35, 0.05);
+}
+
+.message-body code,
+#rendered code {
     color: #24292e;
 }
 
 .message-header {
     padding-left: 1.25em;
-}
-
-.message-body code {
-    background-color: rgba(27, 31, 35, 0.05);
 }
 
 article {

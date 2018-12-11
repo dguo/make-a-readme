@@ -5,6 +5,8 @@
     "scripts": {
         "format": "prettier --write package.json public/*",
         "format:check": "prettier --list-different package.json public/*",
+        "lint": "yarn run lint:css && yarn run lint:html",
+        "lint:css": "stylelint ./**/*.css",
         "lint:html": "htmlhint ./**/*.html",
         "start": "yarn install && live-server --no-browser public"
     },
@@ -15,11 +17,16 @@
     "devDependencies": {
         "htmlhint": "0.10.1",
         "live-server": "1.2.1",
-        "prettier": "1.15.3"
+        "prettier": "1.15.3",
+        "stylelint": "9.9.0",
+        "stylelint-config-recommended": "2.1.0"
     },
     "prettier": {
         "bracketSpacing": false,
         "singleQuote": true,
         "tabWidth": 4
+    },
+    "stylelint": {
+        "extends": "stylelint-config-recommended"
     }
 }
