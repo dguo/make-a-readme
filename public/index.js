@@ -6,7 +6,7 @@ anchors.options.truncate = 50;
 anchors.add();
 
 var md = new Remarkable({
-    highlight: function (str, lang) {
+    highlight: function(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return hljs.highlight(lang, str).value;
@@ -24,7 +24,7 @@ var md = new Remarkable({
 var rendered = document.querySelector('#rendered');
 rendered.innerHTML = md.render(document.querySelector('textarea').textContent);
 
-document.querySelector('textarea').addEventListener('keyup', function (e) {
+document.querySelector('textarea').addEventListener('keyup', function(e) {
     rendered.innerHTML = md.render(e.target.value);
 });
 

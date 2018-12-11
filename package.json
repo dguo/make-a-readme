@@ -1,15 +1,23 @@
 {
-  "name": "make-a-readme",
-  "description": "Website for explaining what a README is",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "yarn install && live-server --no-browser public"
-  },
-  "repository": "https://github.com/dguo/make-a-readme",
-  "author": "Danny Guo",
-  "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "live-server": "1.2.1"
-  }
+    "name": "make-a-readme",
+    "description": "Website for explaining what a README is",
+    "version": "0.1.0",
+    "scripts": {
+        "format": "prettier --write package.json public/*",
+        "format:check": "prettier --list-different package.json public/*",
+        "start": "yarn install && live-server --no-browser public"
+    },
+    "repository": "https://github.com/dguo/make-a-readme",
+    "author": "Danny Guo",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "live-server": "1.2.1",
+        "prettier": "1.15.3"
+    },
+    "prettier": {
+        "bracketSpacing": false,
+        "singleQuote": true,
+        "tabWidth": 4
+    }
 }

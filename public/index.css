@@ -2,12 +2,16 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-a, #yet, .message a:not(.button):not(.tag) {
+a,
+#yet,
+.message a:not(.button):not(.tag) {
     color: hsl(348, 100%, 61%);
     text-decoration: none;
 }
 
-a:hover, #yet:hover, .message a:not(.button):hover {
+a:hover,
+#yet:hover,
+.message a:not(.button):hover {
     color: hsl(348, 60%, 61%);
     text-decoration: none;
 }
@@ -16,7 +20,8 @@ h1 {
     margin-top: 0.5em;
 }
 
-h3, p {
+h3,
+p {
     margin-top: 1em;
 }
 
@@ -42,11 +47,13 @@ h3, p {
     max-width: 800px;
 }
 
-#template, #faq {
+#template,
+#faq {
     background-color: hsl(0, 0%, 21%);
 }
 
-textarea, #rendered {
+textarea,
+#rendered {
     margin: auto;
     display: block;
     width: 95%;
@@ -70,7 +77,8 @@ textarea {
     list-style: unset;
 }
 
-#rendered code, .message-body code {
+#rendered code,
+.message-body code {
     color: #24292e;
 }
 
@@ -79,7 +87,7 @@ textarea {
 }
 
 .message-body code {
-    background-color: rgba(27, 31, 35, .05);
+    background-color: rgba(27, 31, 35, 0.05);
 }
 
 article {
