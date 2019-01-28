@@ -1,0 +1,42 @@
+#carbonads {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 1em;
+    line-height: 1.5;
+    font-size: 0.8em;
+    max-width: 380px;
+}
+
+#carbonads span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.carbon-img {
+    float: left;
+    margin-right: 10px;
+}
+
+.carbon-img img {
+    display: block;
+    line-height: 1;
+}
+
+.carbon-text {
+    display: block;
+    float: left;
+    max-width: calc(100% - 130px - 1em);
+    text-align: left;
+}
+
+.carbon-poweredby {
+    position: absolute;
+    left: calc(130px + 10px);
+    bottom: 0;
+    display: block;
+    float: left;
+    line-height: 1;
+}

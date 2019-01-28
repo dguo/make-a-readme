@@ -35,6 +35,12 @@ def run(port=False):
 
     return command
 
+def format(args, remaining):
+    call(run() + ['yarn', 'format'])
+parser_format = subparsers.add_parser('format',
+    help='format the code')
+parser_format.set_defaults(func=format)
+
 def start(args, remaining):
     Thread(target=open_in_browser).start()
     call(run(True) + ['yarn', 'start'])
