@@ -80,11 +80,7 @@ if (window.location.search) {
 }
 
 if (!loadedAd) {
-    if (Math.random() < 0.7) {
-        loadCodeFundAd();
-    } else {
-        loadCarbonAd();
-    }
+    loadCodeFundAd();
 }
 
 anchors.options.placement = 'left';
