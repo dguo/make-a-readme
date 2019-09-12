@@ -41,6 +41,12 @@ parser_format = subparsers.add_parser('format',
     help='format the code')
 parser_format.set_defaults(func=format)
 
+def lint(args, remaining):
+    call(run() + ['yarn', 'lint'])
+parser_lint = subparsers.add_parser('lint',
+    help='lint the code')
+parser_lint.set_defaults(func=lint)
+
 def start(args, remaining):
     Thread(target=open_in_browser).start()
     call(run(True) + ['yarn', 'start'])

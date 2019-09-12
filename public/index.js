@@ -46,41 +46,20 @@ function handleCodeFundEvent() {
     }
 }
 
-function loadCodeFundAd() {
-    window.addEventListener(CODEFUND_EVENT_NAME, handleCodeFundEvent);
+window.addEventListener(CODEFUND_EVENT_NAME, handleCodeFundEvent);
 
-    var codeFundElement = document.createElement('div');
-    codeFundElement.id = CODEFUND_ELEMENT_ID;
-    var adSeparator = document.getElementById('ad-separator');
-    adSeparator.parentNode.insertBefore(codeFundElement, adSeparator);
-
-    var codeFundScript = document.createElement('script');
-    codeFundScript.id = CODEFUND_SCRIPT_ID;
-    codeFundScript.src =
-        'https://codefund.io/properties/144/funder.js?template=default';
-    codeFundScript.type = 'text/javascript';
-    document.body.appendChild(codeFundScript);
-}
-
-var loadedAd = false;
 if (window.location.search) {
     var queryParams = window.location.search.substring(1).split('&');
     for (var i = 0; i < queryParams.length; i++) {
         var queryParam = queryParams[i].split('=');
-        if (queryParam.length === 2 && queryParam[0] === 'ad') {
-            if (queryParam[1] === 'codefund') {
-                loadedAd = true;
-                loadCodeFundAd();
-            } else if (queryParam[1] === 'carbon') {
-                loadedAd = true;
-                loadCarbonAd();
-            }
+        if (
+            queryParam.length === 2 &&
+            queryParam[0] === 'ad' &&
+            queryParam[1] === 'carbon'
+        ) {
+            fallBackToCarbon();
         }
     }
-}
-
-if (!loadedAd) {
-    loadCodeFundAd();
 }
 
 anchors.options.placement = 'left';
