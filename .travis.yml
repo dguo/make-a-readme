@@ -1,5 +1,0 @@
-language: node_js
-
-script:
-    - yarn run format:check
-    - yarn run lint
