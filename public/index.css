@@ -11,6 +11,10 @@ a,
     color: hsl(348, 100%, 61%);
     text-decoration: none;
 }
+.beauty-bar {
+    padding-left: -40em;
+    padding-right: -40em;
+}
 
 a:hover,
 #yet:hover,
