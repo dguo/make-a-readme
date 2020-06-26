@@ -1,9 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 html {
     font-family: 'Open Sans', sans-serif;
 }
 
 /* stylelint-disable no-descending-specificity */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.9);
+}
 
 a,
 #yet,
@@ -11,6 +29,7 @@ a,
     color: hsl(348, 100%, 61%);
     text-decoration: none;
 }
+
 .beauty-bar {
     padding-left: -40em;
     padding-right: -40em;
