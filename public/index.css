@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 html {
     font-family: 'Open Sans', sans-serif;
 }
@@ -88,6 +89,10 @@ textarea {
 
 .message-body code {
     background-color: rgba(27, 31, 35, 0.05);
+}
+
+.fira-code {
+    font-family: 'Fira Code', monospace;
 }
 
 .message-body code,
