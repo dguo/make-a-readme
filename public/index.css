@@ -33,11 +33,6 @@ p {
     margin-top: 1em;
 }
 
-#codefund {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 #ad-separator {
     border-bottom: 2px solid hsl(0, 0%, 90%);
 }
