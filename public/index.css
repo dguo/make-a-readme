@@ -126,19 +126,8 @@ article {
     max-width: 130px;
 }
 
-.sponsor-text {
+.sponsor-message {
     max-width: calc(100% - 130px - 1em);
-}
-
-@media screen and (max-width: 405px) {
-    .sponsor-text {
-        font-size: 3.3vw;
-        line-height: 120%;
-    }
-
-    .sponsor-disclaimer {
-        font-size: 2.8vw;
-    }
 }
 
 .sponsor-disclaimer {
@@ -147,4 +136,15 @@ article {
     left: calc(130px + 10px);
     bottom: 0;
     line-height: 120%;
+}
+
+@media screen and (max-width: 405px) {
+    .sponsor-message {
+        font-size: 3.3vw;
+        line-height: 120%;
+    }
+
+    .sponsor-disclaimer {
+        font-size: 2.8vw;
+    }
 }
