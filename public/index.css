@@ -33,10 +33,6 @@ p {
     margin-top: 1em;
 }
 
-#ad-separator {
-    border-bottom: 2px solid hsl(0, 0%, 90%);
-}
-
 #footer {
     margin-bottom: 0px;
     padding-top: 2em;
@@ -97,4 +93,58 @@ textarea {
 article {
     max-width: 600px;
     margin: auto;
+}
+
+#sponsor-separator {
+    border-bottom: 2px solid hsl(0, 0%, 90%);
+}
+
+#sponsor {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 1em;
+    line-height: 1.5;
+    font-size: 0.8em;
+    max-width: 480px;
+}
+
+#sponsor span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.sponsor-img {
+    float: left;
+    margin-right: 10px;
+}
+
+.sponsor-img img {
+    display: block;
+    max-width: 130px;
+}
+
+.sponsor-text {
+    max-width: calc(100% - 130px - 1em);
+}
+
+@media screen and (max-width: 405px) {
+    .sponsor-text {
+        font-size: 3.3vw;
+        line-height: 120%;
+    }
+
+    .sponsor-disclaimer {
+        font-size: 2.8vw;
+    }
+}
+
+.sponsor-disclaimer {
+    color: grey;
+    position: absolute;
+    left: calc(130px + 10px);
+    bottom: 0;
+    line-height: 120%;
 }
