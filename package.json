@@ -15,11 +15,11 @@
     "license": "MIT",
     "private": true,
     "devDependencies": {
-        "htmlhint": "0.11.0",
+        "htmlhint": "0.15.1",
         "live-server": "1.2.1",
         "prettier": "1.18.2",
-        "stylelint": "10.1.0",
-        "stylelint-config-recommended": "2.2.0"
+        "stylelint": "13.13.1",
+        "stylelint-config-recommended": "5.0.0"
     },
     "prettier": {
         "bracketSpacing": false,
