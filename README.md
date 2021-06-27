@@ -1,7 +1,7 @@
 # Make a README
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/68992d1c-36d4-4a84-b177-00c1f64fbcb4/deploy-status)](https://app.netlify.com/sites/make-a-readme/deploys)
-[![CI status](https://github.com/dguo/make-a-readme/workflows/CI/badge.svg)](https://github.com/dguo/make-a-readme/actions?query=branch%3Amaster)
+[![CI status](https://github.com/dguo/make-a-readme/workflows/CI/badge.svg)](https://github.com/dguo/make-a-readme/actions?query=branch%3Amain)
 
 [Make a README](https://makeareadme.com) explains what a README is, what the
 benefits are, and what makes for a good README. It also provides an editable
@@ -17,9 +17,9 @@ Make a README is inspired by [Keep a Changelog](http://keepachangelog.com/).
 
 ## Related Resources
 
-* [Art of README](https://github.com/noffle/art-of-readme)
-* [Awesome README](https://github.com/matiassingers/awesome-readme)
-* [Standard Readme](https://github.com/RichardLitt/standard-readme)
+- [Art of README](https://github.com/noffle/art-of-readme)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [Standard Readme](https://github.com/RichardLitt/standard-readme)
 
 ## Roadmap
 
@@ -30,14 +30,9 @@ Make a README is inspired by [Keep a Changelog](http://keepachangelog.com/).
 
 ## Contributing
 
-Please feel free to submit an issue or pull request. The website is simple
-enough to not require a build process. Just open `public/index.html` in a
-browser.
-
-If you want [live reloading](https://github.com/tapio/live-server) and have
-Node installed, run `$ yarn install && yarn start`. If you have Python and
-Docker installed, you can run `$ ./dev start` instead.
+Please feel free to submit an issue or pull request. To develop, you'll need
+Node.js. Run `yarn install && yarn dev`.
 
 ## License
 
-[MIT](https://github.com/dguo/make-a-readme/blob/master/LICENSE)
+[MIT](https://github.com/dguo/make-a-readme/blob/main/LICENSE)

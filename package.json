@@ -3,23 +3,31 @@
     "description": "Website for explaining what a README is",
     "version": "0.1.0",
     "scripts": {
+        "dev": "yarn install && next dev",
+        "build": "next build",
+        "export": "next build && next export -o build",
         "format": "prettier --write package.json public/*.js public/*.css",
         "format:check": "prettier --list-different package.json public/*.js public/*.css",
-        "lint": "yarn run lint:css && yarn run lint:html",
-        "lint:css": "stylelint ./**/*.css",
-        "lint:html": "htmlhint ./**/*.html",
-        "start": "yarn install && live-server --no-browser public"
+        "lint": "yarn run lint:css",
+        "lint:css": "stylelint ./**/*.css"
     },
     "repository": "https://github.com/dguo/make-a-readme",
     "author": "Danny Guo",
     "license": "MIT",
     "private": true,
+    "dependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-github-corner": "2.5.0"
+    },
     "devDependencies": {
+        "@types/react": "17.0.11",
         "htmlhint": "0.15.1",
-        "live-server": "1.2.1",
+        "next": "11.0.1",
         "prettier": "2.3.2",
         "stylelint": "13.13.1",
-        "stylelint-config-recommended": "5.0.0"
+        "stylelint-config-recommended": "5.0.0",
+        "typescript": "4.3.4"
     },
     "prettier": {
         "bracketSpacing": false,

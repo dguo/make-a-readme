@@ -1,3 +1,6 @@
 *.swp
 *.swo
-node_modules
+.DS_Store
+.next/
+build/
+node_modules/
