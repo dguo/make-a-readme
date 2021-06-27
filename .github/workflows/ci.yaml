@@ -29,6 +29,8 @@ jobs:
               run: yarn run format:check
             - name: Lint the code
               run: yarn run lint
+            - name: Export the website
+              run: yarn run export
             - name: Run Lighthouse
               run: npx --package=@lhci/cli lhci autorun
               env:

@@ -1,2 +1,3 @@
 [build]
-  publish = "public"
+  command = "yarn run export"
+  publish = "build"
