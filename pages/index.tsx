@@ -68,17 +68,12 @@ export default function Home() {
                 />
                 <link
                     rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Open+Sans"
-                />
-                <link
-                    rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
                 />
                 <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/hopscotch.min.css"
                 />
-                <link rel="stylesheet" href="index.css" />
             </Head>
 
             <GitHubCorner
