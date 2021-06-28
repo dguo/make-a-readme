@@ -6,8 +6,8 @@
         "dev": "yarn install && next dev",
         "build": "next build",
         "export": "next build && next export -o build",
-        "format": "prettier --write package.json public/*.js public/*.css",
-        "format:check": "prettier --list-different package.json public/*.js public/*.css",
+        "format": "prettier --write package.json public/*.js index.css",
+        "format:check": "prettier --list-different package.json public/*.js index.css",
         "lint": "yarn run lint:css",
         "lint:css": "stylelint ./**/*.css"
     },
