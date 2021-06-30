@@ -59,19 +59,6 @@ export default function Home() {
                     type="image/x-icon"
                     href="images/favicon.ico"
                 />
-
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/hopscotch.min.css"
-                />
             </Head>
 
             <GitHubCorner

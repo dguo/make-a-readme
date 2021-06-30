@@ -19,6 +19,9 @@
         "@fortawesome/fontawesome-svg-core": "1.2.35",
         "@fortawesome/free-solid-svg-icons": "5.15.3",
         "@fortawesome/react-fontawesome": "0.1.14",
+        "bulma": "0.7.2",
+        "github-markdown-css": "4.0.0",
+        "highlight.js": "11.0.1",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-github-corner": "2.5.0"
