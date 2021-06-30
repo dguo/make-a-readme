@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Script from "next/script";
 import GitHubCorner from "react-github-corner";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCircle, faFileAlt} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
     return (
@@ -64,10 +66,6 @@ export default function Home() {
                 />
                 <link
                     rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-                />
-                <link
-                    rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
                 />
                 <link
@@ -84,18 +82,14 @@ export default function Home() {
 
             <section className="hero is-dark is-medium is-bold">
                 <div className="hero-body has-text-centered">
-                    <p>
-                        <span className="fa-stack fa-3x">
-                            <i className="fa fa-circle fa-stack-2x"></i>
-                            <i
-                                className="
-                                fa fa-file-text fa-stack-1x
-                                has-text-grey-darker
-                            "
-                            ></i>
-                        </span>
-                    </p>
-
+                    <span className="fa-layers fa-fw fa-5x">
+                        <FontAwesomeIcon icon={faCircle} color="white" />
+                        <FontAwesomeIcon
+                            icon={faFileAlt}
+                            transform="shrink-6"
+                            color="hsl(0, 0%, 21%)"
+                        />
+                    </span>
                     <h1 className="title is-2">Make a README</h1>
                     <p className="subtitle is-4">
                         Because no one can read your mind (
