@@ -97,10 +97,18 @@ export default function Home() {
                             target="_blank"
                             rel="noopener sponsored"
                         >
-                            <img
-                                src="images/owlbert.jpg"
-                                alt="ReadMe Owlbert"
-                            />
+                            <picture>
+                                <source
+                                    srcSet="images/owlbert.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    src="images/owlbert.jpg"
+                                    alt="ReadMe Owlbert"
+                                    width="281"
+                                    height="240"
+                                />
+                            </picture>
                         </a>
                         <span className="sponsor-message">
                             Need an interactive developer hub, complete with
