@@ -182,17 +182,20 @@ export default function Home() {
                             Markdown
                         </a>
                         . It allows you to add some lightweight formatting. You
-                        can learn more about it{" "}
-                        <a href="http://commonmark.org/">here</a>, which also
-                        has a helpful{" "}
-                        <a href="http://commonmark.org/help/">
+                        can learn more about it at the{" "}
+                        <a href="https://commonmark.org/">CommonMark website</a>
+                        , which also has a helpful{" "}
+                        <a href="https://commonmark.org/help/">
                             reference guide
                         </a>{" "}
                         and an{" "}
-                        <a href="http://commonmark.org/help/tutorial/">
+                        <a href="https://commonmark.org/help/tutorial/">
                             interactive tutorial
                         </a>
-                        . Some other formats that you might see are{" "}
+                        .
+                    </p>
+                    <p>
+                        Some other formats that you might see are{" "}
                         <a href="https://en.wikipedia.org/wiki/Text_file">
                             plain text
                         </a>
