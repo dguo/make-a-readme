@@ -250,9 +250,12 @@ export default function Home() {
                 <div className="columns">
                     <div className="column is-6">
                         <h3 className="title is-4 has-text-centered has-text-light">
-                            Markdown Input (editable)
+                            <label htmlFor="markdown-input">
+                                Markdown Input (editable)
+                            </label>
                         </h3>
                         <textarea
+                            id="markdown-input"
                             defaultValue={`
 # Foobar
 
