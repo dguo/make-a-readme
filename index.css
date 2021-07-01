@@ -33,6 +33,10 @@ p {
     margin-top: 1em;
 }
 
+ul {
+    line-height: 35px;
+}
+
 #footer {
     margin-bottom: 0px;
     padding-top: 2em;
