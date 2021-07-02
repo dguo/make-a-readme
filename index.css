@@ -5,21 +5,26 @@ body {
 /* stylelint-disable no-descending-specificity */
 
 a,
-#yet,
-.message a:not(.button):not(.tag) {
-    color: hsl(348, 100%, 61%);
+#faq a,
+#faq .message a.anchorjs-link {
+    color: #0366d6;
     text-decoration: none;
 }
 
 a:hover,
-#yet:hover,
-.message a:not(.button):hover {
-    color: hsl(348, 60%, 61%);
-    text-decoration: none;
+#faq a:hover {
+    color: #0366d6;
 }
 
-.markdown-body a {
-    color: #0366d6;
+a:not(.anchorjs-link):hover,
+#faq a:not(.anchorjs-link):hover {
+    text-decoration: underline;
+}
+
+#yet,
+#template a.anchorjs-link,
+#faq a.anchorjs-link {
+    color: #48b6e2;
 }
 
 /* stylelint-enable */
@@ -81,13 +86,10 @@ textarea {
     list-style: unset;
 }
 
-.message-body code {
-    background-color: rgba(27, 31, 35, 0.05);
-}
-
-.message-body code,
-#rendered code {
+body code,
+.message code {
     color: #24292e;
+    background-color: rgba(27, 31, 35, 0.05);
 }
 
 .message-header {
@@ -135,7 +137,7 @@ article {
 }
 
 .sponsor-disclaimer {
-    color: grey;
+    color: rgb(116, 116, 116);
     position: absolute;
     left: calc(130px + 10px);
     bottom: 0;
