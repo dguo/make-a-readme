@@ -9,7 +9,7 @@
         "format": "prettier --write package.json public/*.js index.css",
         "format:check": "prettier --list-different package.json public/*.js index.css",
         "lint": "yarn run lint:css",
-        "lint:css": "stylelint ./**/*.css"
+        "lint:css": "stylelint ./**/*.css *.css"
     },
     "repository": "https://github.com/dguo/make-a-readme",
     "author": "Danny Guo",
