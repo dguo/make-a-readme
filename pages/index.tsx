@@ -3,6 +3,7 @@ import Script from "next/script";
 import GitHubCorner from "react-github-corner";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faFileAlt} from "@fortawesome/free-solid-svg-icons";
+import TextareaAutosize from "react-textarea-autosize";
 
 export default function Home() {
     return (
@@ -265,7 +266,7 @@ export default function Home() {
                                 Markdown Input (editable)
                             </label>
                         </h3>
-                        <textarea
+                        <TextareaAutosize
                             id="markdown-input"
                             defaultValue={`
 # Foobar
@@ -696,10 +697,6 @@ Please make sure to update tests as appropriate.
             <Script
                 strategy="beforeInteractive"
                 src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
-            />
-            <Script
-                strategy="beforeInteractive"
-                src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.0/autosize.min.js"
             />
             <Script src="index.js" />
             <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />

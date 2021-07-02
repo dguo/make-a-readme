@@ -27,5 +27,3 @@ rendered.innerHTML = md.render(document.querySelector("textarea").textContent);
 document.querySelector("textarea").addEventListener("keyup", function (e) {
     rendered.innerHTML = md.render(e.target.value);
 });
-
-autosize(document.querySelector("textarea"));
