@@ -6,10 +6,8 @@
         "dev": "yarn install && next dev",
         "build": "next build",
         "export": "next build && next export -o build",
-        "format": "prettier --write package.json public/*.js index.css",
-        "format:check": "prettier --list-different package.json public/*.js index.css",
-        "lint": "yarn run lint:css",
-        "lint:css": "stylelint ./**/*.css *.css"
+        "format": "prettier --write \"./**/*.{json,js,jsx,ts,tsx}\"",
+        "format:check": "prettier --list-different package.json \"./**/*.{json,js,jsx,ts,tsx}\""
     },
     "repository": "https://github.com/dguo/make-a-readme",
     "author": "Danny Guo",
@@ -19,7 +17,6 @@
         "@fortawesome/fontawesome-svg-core": "1.2.35",
         "@fortawesome/free-solid-svg-icons": "5.15.3",
         "@fortawesome/react-fontawesome": "0.1.14",
-        "bulma": "0.7.2",
         "github-markdown-css": "4.0.0",
         "highlight.js": "11.0.1",
         "react": "17.0.2",
@@ -29,19 +26,16 @@
     },
     "devDependencies": {
         "@types/react": "17.0.11",
-        "htmlhint": "0.15.1",
+        "autoprefixer": "10.2.6",
         "next": "11.0.1",
+        "postcss": "8.3.5",
         "prettier": "2.3.2",
-        "stylelint": "13.13.1",
-        "stylelint-config-recommended": "5.0.0",
+        "tailwindcss": "2.2.4",
         "typescript": "4.3.4"
     },
     "prettier": {
         "bracketSpacing": false,
         "tabWidth": 4,
         "trailingComma": "none"
-    },
-    "stylelint": {
-        "extends": "stylelint-config-recommended"
     }
 }
