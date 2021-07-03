@@ -4,6 +4,50 @@ import GitHubCorner from "react-github-corner";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faFileAlt} from "@fortawesome/free-solid-svg-icons";
 import TextareaAutosize from "react-textarea-autosize";
+import {PropsWithChildren} from "react";
+
+type SectionProps = PropsWithChildren<{
+    heading: string;
+}>;
+
+function Section(props: SectionProps) {
+    return (
+        <section className="flex justify-center pt-10 pb-6">
+            <div className="max-w-prose">
+                <h2>{props.heading}</h2>
+                {props.children}
+            </div>
+        </section>
+    );
+}
+
+type SectionItemProps = PropsWithChildren<{
+    heading: string;
+    isFAQ?: boolean;
+}>;
+
+function SectionItem(props: SectionItemProps) {
+    return (
+        <div className="mb-8 mx-4">
+            <h3
+                className={
+                    props.isFAQ
+                        ? "bg-yellow-300 px-6 py-3 mb-0 rounded-t-md text-lg"
+                        : null
+                }
+            >
+                {props.heading}
+            </h3>
+            {props.isFAQ ? (
+                <div className="bg-yellow-50 px-6 pt-2 pb-4 rounded-b-md">
+                    {props.children}
+                </div>
+            ) : (
+                props.children
+            )}
+        </div>
+    );
+}
 
 export default function Home() {
     return (
@@ -68,75 +112,68 @@ export default function Home() {
                 octoColor="#404040"
             />
 
-            <section className="hero is-dark is-medium is-bold">
-                <div className="hero-body has-text-centered">
-                    <span className="fa-layers fa-fw fa-5x">
-                        <FontAwesomeIcon icon={faCircle} color="white" />
-                        <FontAwesomeIcon
-                            icon={faFileAlt}
-                            transform="shrink-6"
-                            color="hsl(0, 0%, 21%)"
-                        />
-                    </span>
-                    <h1 className="title is-2">Make a README</h1>
-                    <p className="subtitle is-4">
-                        Because no one can read your mind (
-                        <a id="yet" href="#mind-reading">
-                            yet
-                        </a>
-                        )
-                    </p>
-                </div>
-            </section>
+            <header className="bg-gradient-to-br from-dark-gray via-medium-gray to-light-gray text-center text-white py-32">
+                <span className="mb-6 fa-layers fa-fw fa-5x">
+                    <FontAwesomeIcon icon={faCircle} />
+                    <FontAwesomeIcon
+                        icon={faFileAlt}
+                        transform="shrink-6"
+                        className="text-medium-gray"
+                    />
+                </span>
+                <h1 className="mb-2">Make a README</h1>
+                <p className="text-2xl">
+                    Because no one can read your mind (
+                    <a id="yet" href="#mind-reading" className="text-blue-400">
+                        yet
+                    </a>
+                    )
+                </p>
+            </header>
 
-            <div id="sponsor">
-                <span>
-                    <span className="sponsor-wrap">
+            <aside className="flex justify-center items-center border-b-2 p-3 space-x-3">
+                <a
+                    href="https://readme.com"
+                    target="_blank"
+                    rel="noopener sponsored"
+                >
+                    <picture>
+                        <source
+                            srcSet="images/owlbert.webp"
+                            type="image/webp"
+                        />
+                        <img
+                            src="images/owlbert.jpg"
+                            alt="ReadMe Owlbert"
+                            width="281"
+                            height="240"
+                            className="max-w-130px"
+                        />
+                    </picture>
+                </a>
+                <div className="max-w-sm space-y-5">
+                    <p className="text-gray-500 text-sm mt-0 leading-5">
+                        Need an interactive developer hub, complete with
+                        documentation, reference guides, tutorials, realtime API
+                        logs and community?{" "}
                         <a
                             href="https://readme.com"
-                            className="sponsor-img"
                             target="_blank"
                             rel="noopener sponsored"
                         >
-                            <picture>
-                                <source
-                                    srcSet="images/owlbert.webp"
-                                    type="image/webp"
-                                />
-                                <img
-                                    src="images/owlbert.jpg"
-                                    alt="ReadMe Owlbert"
-                                    width="281"
-                                    height="240"
-                                />
-                            </picture>
+                            Try ReadMe.com!
                         </a>
-                        <span className="sponsor-message">
-                            Need an interactive developer hub, complete with
-                            documentation, reference guides, tutorials, realtime
-                            API logs and community?{" "}
-                            <a
-                                href="https://readme.com"
-                                target="_blank"
-                                rel="noopener sponsored"
-                            >
-                                Try ReadMe.com!
-                            </a>
-                        </span>
-                    </span>
-                    <small className="sponsor-disclaimer">
-                        Make a README is proudly sponsored by ReadMe.com
-                    </small>
-                </span>
-            </div>
+                    </p>
+                    <p className="text-gray-500 leading-4">
+                        <small className="text-xs ">
+                            Make a README is proudly sponsored by ReadMe.com
+                        </small>
+                    </p>
+                </div>
+            </aside>
 
-            <div id="sponsor-separator"></div>
-
-            <section className="section">
-                <div className="container">
-                    <h2 className="title is-3 has-text-centered">README 101</h2>
-
-                    <h3 className="title is-4">What is it?</h3>
+            <Section heading="README 101">
+                <SectionItem heading="What is it?">
                     <p>
                         A{" "}
                         <a href="https://en.wikipedia.org/wiki/README">
@@ -146,21 +183,24 @@ export default function Home() {
                         It contains information that is commonly required to
                         understand what the project is about.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Why should I make it?</h3>
+                <SectionItem heading="Why should I make it?">
                     <p>
                         It's an easy way to answer questions that your audience
                         will likely have regarding how to install and use your
                         project and also how to collaborate with you.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Who should make it?</h3>
+                <SectionItem heading="Who should make it?">
                     <p>
                         Anyone who is working on a programming project,
                         especially if you want others to use it or contribute.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">When should I make it?</h3>
+                <SectionItem heading="When should I make it?">
                     <p>
                         Definitely before you show a project to other people or
                         make it public. You might want to get into the habit of
@@ -170,8 +210,9 @@ export default function Home() {
                         </a>{" "}
                         in a new project.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Where should I put it?</h3>
+                <SectionItem heading="Where should I put it?">
                     <p>
                         In the top level directory of the project. This is where
                         someone who is new to your project will start out. Code
@@ -182,8 +223,9 @@ export default function Home() {
                         look for your README and display it along with the list
                         of files and directories in your project.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">How should I make it?</h3>
+                <SectionItem heading="How should I make it?">
                     <p>
                         While READMEs can be written in any text file format,
                         the most common one that is used nowadays is{" "}
@@ -251,23 +293,22 @@ export default function Home() {
                         or <a href="http://dillinger.io/">Dillinger</a>. You can
                         even use the editable template below.
                     </p>
-                </div>
-            </section>
+                </SectionItem>
+            </Section>
 
-            <section id="template" className="section">
-                <h2 className="title has-text-centered has-text-light">
-                    Template
-                </h2>
+            <section id="template" className="bg-medium-gray pb-10">
+                <h2 className="text-white pt-10">Template</h2>
 
-                <div className="columns">
-                    <div className="column is-6">
-                        <h3 className="title is-4 has-text-centered has-text-light">
+                <div className="flex justify-center flex-wrap">
+                    <div className="flex-1 m-3 max-w-5xl">
+                        <p className="text-white text-center text-xl font-bold mt-0 mb-4">
                             <label htmlFor="markdown-input">
                                 Markdown Input (editable)
                             </label>
-                        </h3>
+                        </p>
                         <TextareaAutosize
                             id="markdown-input"
+                            className="bg-white w-full p-4 rounded-lg pt-0 pb-4 font-mono text-sm"
                             defaultValue={`
 # Foobar
 
@@ -305,38 +346,37 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)`}
                         />
                     </div>
-                    <div className="column is-6">
-                        <h3 className="title is-4 has-text-centered has-text-light">
+                    <div className="flex-1 m-3 max-w-5xl">
+                        <p className="text-white text-center text-xl font-bold mt-0 mb-4">
                             Rendered
-                        </h3>
-                        <div id="rendered" className="markdown-body"></div>
+                        </p>
+                        <div
+                            id="rendered"
+                            className="markdown-body bg-white p-4 rounded-lg"
+                        ></div>
                     </div>
                 </div>
             </section>
 
-            <section className="section">
-                <div className="container">
-                    <h2 className="title is-3 has-text-centered">
-                        Suggestions for a good README
-                    </h2>
+            <Section heading="Suggestions for a good README">
+                <p className="mb-8 mx-4">
+                    Every project is different, so consider which of these
+                    sections apply to yours. The sections used in the template
+                    are suggestions for most open source projects. Also keep in
+                    mind that while a README can be too long and detailed, too
+                    long is better than too short. If you think your README is
+                    too long, consider utilizing{" "}
+                    <a href="#more-documentation">
+                        another form of documentation
+                    </a>{" "}
+                    rather than cutting out information.
+                </p>
 
-                    <p>
-                        Every project is different, so consider which of these
-                        sections apply to yours. The sections used in the
-                        template are suggestions for most open source projects.
-                        Also keep in mind that while a README can be too long
-                        and detailed, too long is better than too short. If you
-                        think your README is too long, consider utilizing{" "}
-                        <a href="#more-documentation">
-                            another form of documentation
-                        </a>{" "}
-                        rather than cutting out information.
-                    </p>
-
-                    <h3 className="title is-4">Name</h3>
+                <SectionItem heading="Name">
                     <p>Choose a self-explaining name for your project.</p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Description</h3>
+                <SectionItem heading="Description">
                     <p>
                         Let people know what your project can do specifically.
                         Provide context and add a link to any reference visitors
@@ -345,8 +385,9 @@ Please make sure to update tests as appropriate.
                         there are alternatives to your project, this is a good
                         place to list differentiating factors.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Badges</h3>
+                <SectionItem heading="Badges">
                     <p>
                         On some READMEs, you may see small images that convey
                         metadata, such as whether or not all the tests are
@@ -355,8 +396,9 @@ Please make sure to update tests as appropriate.
                         your README. Many services also have instructions for
                         adding a badge.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Visuals</h3>
+                <SectionItem heading="Visuals">
                     <p>
                         Depending on what you are making, it can be a good idea
                         to include screenshots or even a video (you'll
@@ -367,8 +409,9 @@ Please make sure to update tests as appropriate.
                         <a href="https://asciinema.org/">Asciinema</a> for a
                         more sophisticated method.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Installation</h3>
+                <SectionItem heading="Installation">
                     <p>
                         Within a particular ecosystem, there may be a common way
                         of installing things, such as using{" "}
@@ -384,8 +427,9 @@ Please make sure to update tests as appropriate.
                         that have to be installed manually, also add a{" "}
                         <b>Requirements</b> subsection.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Usage</h3>
+                <SectionItem heading="Usage">
                     <p>
                         Use examples liberally, and show the expected output if
                         you can. It's helpful to have inline the smallest
@@ -393,21 +437,24 @@ Please make sure to update tests as appropriate.
                         providing links to more sophisticated examples if they
                         are too long to reasonably include in the README.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Support</h3>
+                <SectionItem heading="Support">
                     <p>
                         Tell people where they can go to for help. It can be any
                         combination of an issue tracker, a chat room, an email
                         address, etc.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Roadmap</h3>
+                <SectionItem heading="Roadmap">
                     <p>
                         If you have ideas for releases in the future, it is a
                         good idea to list them in the README.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Contributing</h3>
+                <SectionItem heading="Contributing">
                     <p>
                         State if you are open to contributions and what your
                         requirements are for accepting them.
@@ -437,20 +484,23 @@ Please make sure to update tests as appropriate.
                         <a href="http://www.seleniumhq.org/">Selenium</a> server
                         for testing in a browser.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Authors and acknowledgment</h3>
+                <SectionItem heading="Authors and acknowledgment">
                     <p>
                         Show your appreciation to those who have contributed to
                         the project.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">License</h3>
+                <SectionItem heading="License">
                     <p>
                         For open source projects, say how it is{" "}
                         <a href="#license-1">licensed</a>.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Project status</h3>
+                <SectionItem heading="Project status">
                     <p>
                         If you have run out of energy or time for your project,
                         put a note at the top of the README saying that
@@ -460,98 +510,100 @@ Please make sure to update tests as appropriate.
                         to keep going. You can also make an explicit request for
                         maintainers.
                     </p>
+                </SectionItem>
+            </Section>
+
+            <section
+                id="faq"
+                className="flex justify-center pt-10 pb-6 bg-medium-gray"
+            >
+                <div className="max-w-prose">
+                    <h2 className="text-white">FAQ</h2>
+
+                    <SectionItem
+                        heading="Is there a standard README format?"
+                        isFAQ
+                    >
+                        <p>
+                            Not all of the suggestions here will make sense for
+                            every project, so it's really up to the developers
+                            what information should be included in the README.
+                        </p>
+                    </SectionItem>
+
+                    <SectionItem
+                        heading="What are some other thoughts on writing READMEs?"
+                        isFAQ
+                    >
+                        <p>
+                            Check out{" "}
+                            <a href="https://github.com/matiassingers/awesome-readme">
+                                Awesome README
+                            </a>{" "}
+                            for a list of more resources.
+                        </p>
+                    </SectionItem>
+
+                    <SectionItem
+                        heading="What should the README file be named?"
+                        isFAQ
+                    >
+                        <p>
+                            <code>README.md</code> (or a different file
+                            extension if you choose to use a non-Markdown file
+                            format). It is{" "}
+                            <a href="https://softwareengineering.stackexchange.com/q/301691/298927">
+                                traditionally uppercase
+                            </a>{" "}
+                            so that it is more prominent, but it's not a big
+                            deal if you think it{" "}
+                            <a href="https://github.com/sindresorhus/ama/issues/197">
+                                looks better lowercase
+                            </a>
+                            .
+                        </p>
+                    </SectionItem>
+
+                    <SectionItem
+                        heading="What if I disagree with something, want to make a change, or have any other feedback?"
+                        isFAQ
+                    >
+                        <p>
+                            Please don't hesitate to open an{" "}
+                            <a href="https://github.com/dguo/make-a-readme/issues">
+                                issue
+                            </a>{" "}
+                            or{" "}
+                            <a href="https://github.com/dguo/make-a-readme/pulls">
+                                pull request
+                            </a>
+                            . You can also send me a message on{" "}
+                            <a href="https://twitter.com/dannyguo">Twitter</a>.
+                        </p>
+                    </SectionItem>
+
+                    <SectionItem heading="Mind reading?" isFAQ>
+                        <p>
+                            <a href="https://www.usatoday.com/story/tech/2014/04/22/mind-reading-brain-scans/7747831/">
+                                Scientists
+                            </a>{" "}
+                            and companies like{" "}
+                            <a href="https://www.theverge.com/2017/4/20/15375176/facebook-regina-dugan-interview-building-8-mind-reading-f8-2017">
+                                Facebook
+                            </a>{" "}
+                            and{" "}
+                            <a href="https://www.neuralink.com/">Neuralink</a>{" "}
+                            (presumably) are working on it. Perhaps in the
+                            future, you'll be able to attach a copy of your
+                            thoughts and/or consciousness to your projects. In
+                            the meantime, please make READMEs.
+                        </p>
+                    </SectionItem>
                 </div>
             </section>
 
-            <section id="faq" className="section">
-                <h2 className="title has-text-centered has-text-light">FAQ</h2>
-
-                <article className="message is-warning">
-                    <h3 className="message-header">
-                        Is there a standard README format?
-                    </h3>
-                    <div className="message-body">
-                        Not all of the suggestions here will make sense for
-                        every project, so it's really up to the developers what
-                        information should be included in the README.
-                    </div>
-                </article>
-
-                <article className="message is-warning">
-                    <h3 className="message-header">
-                        What are some other thoughts on writing READMEs?
-                    </h3>
-                    <div className="message-body">
-                        Check out{" "}
-                        <a href="https://github.com/matiassingers/awesome-readme">
-                            Awesome README
-                        </a>{" "}
-                        for a list of more resources.
-                    </div>
-                </article>
-
-                <article className="message is-warning">
-                    <h3 className="message-header">
-                        What should the README file be named?
-                    </h3>
-                    <div className="message-body">
-                        <code>README.md</code> (or a different file extension if
-                        you choose to use a non-Markdown file format). It is{" "}
-                        <a href="https://softwareengineering.stackexchange.com/q/301691/298927">
-                            traditionally uppercase
-                        </a>{" "}
-                        so that it is more prominent, but it's not a big deal if
-                        you think it{" "}
-                        <a href="https://github.com/sindresorhus/ama/issues/197">
-                            looks better lowercase
-                        </a>
-                        .
-                    </div>
-                </article>
-
-                <article className="message is-warning">
-                    <h3 className="message-header">
-                        What if I disagree with something, want to make a
-                        change, or have any other feedback?
-                    </h3>
-                    <div className="message-body">
-                        Please don't hesitate to open an{" "}
-                        <a href="https://github.com/dguo/make-a-readme/issues">
-                            issue
-                        </a>{" "}
-                        or{" "}
-                        <a href="https://github.com/dguo/make-a-readme/pulls">
-                            pull request
-                        </a>
-                        . You can also send me a message on{" "}
-                        <a href="https://twitter.com/dannyguo">Twitter</a>.
-                    </div>
-                </article>
-
-                <article className="message is-warning">
-                    <h3 className="message-header">Mind reading?</h3>
-                    <div className="message-body">
-                        <a href="https://www.usatoday.com/story/tech/2014/04/22/mind-reading-brain-scans/7747831/">
-                            Scientists
-                        </a>{" "}
-                        and companies like{" "}
-                        <a href="https://www.theverge.com/2017/4/20/15375176/facebook-regina-dugan-interview-building-8-mind-reading-f8-2017">
-                            Facebook
-                        </a>{" "}
-                        and <a href="https://www.neuralink.com/">Neuralink</a>{" "}
-                        (presumably) are working on it. Perhaps in the future,
-                        you'll be able to attach a copy of your thoughts and/or
-                        consciousness to your projects. In the meantime, please
-                        make READMEs.
-                    </div>
-                </article>
-            </section>
-
-            <section className="section">
-                <div className="container">
-                    <h2 className="title has-text-centered">What's next?</h2>
-
-                    <h3 className="title is-4">License</h3>
+            <Section heading="What's next?">
+                <SectionItem heading="License">
                     <p>
                         If your project is{" "}
                         <a href="https://en.wikipedia.org/wiki/Open-source_software">
@@ -569,8 +621,9 @@ Please make sure to update tests as appropriate.
                         <a href="https://choosealicense.com/">this website</a>{" "}
                         to help you pick one.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">Changelog</h3>
+                <SectionItem heading="Changelog">
                     <p>
                         Make a README is inspired by{" "}
                         <a href="http://keepachangelog.com/">
@@ -583,8 +636,9 @@ Please make sure to update tests as appropriate.
                         is another file that is very useful for programming
                         projects.
                     </p>
+                </SectionItem>
 
-                    <h3 className="title is-4">More Documentation</h3>
+                <SectionItem heading="More Documentation">
                     <p>
                         A README is a crucial but basic way of documenting your
                         project. While every project should at least have a
@@ -606,41 +660,35 @@ Please make sure to update tests as appropriate.
                         and here are some tools and services that can help you
                         generate a documentation website:
                     </p>
+                    <ul className="list-disc ml-8 my-4 space-y-3">
+                        <li>
+                            <a href="https://dauxio.github.io/">Daux.io</a>
+                        </li>
+                        <li>
+                            <a href="https://docusaurus.io/">Docusaurus</a>
+                        </li>
+                        <li>
+                            <a href="https://www.gitbook.com/">GitBook</a>
+                        </li>
+                        <li>
+                            <a href="https://www.mkdocs.org/">MkDocs</a>
+                        </li>
+                        <li>
+                            <a href="https://readthedocs.org/">Read the Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://readme.io/">ReadMe</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/lord/slate">Slate</a>
+                        </li>
+                        <li>
+                            <a href="https://docsify.js.org/">Docsify</a>
+                        </li>
+                    </ul>
+                </SectionItem>
 
-                    <div className="content">
-                        <ul>
-                            <li>
-                                <a href="https://dauxio.github.io/">Daux.io</a>
-                            </li>
-                            <li>
-                                <a href="https://docusaurus.io/">Docusaurus</a>
-                            </li>
-                            <li>
-                                <a href="https://www.gitbook.com/">GitBook</a>
-                            </li>
-                            <li>
-                                <a href="https://www.mkdocs.org/">MkDocs</a>
-                            </li>
-                            <li>
-                                <a href="https://readthedocs.org/">
-                                    Read the Docs
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://readme.io/">ReadMe</a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/lord/slate">
-                                    Slate
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://docsify.js.org/">Docsify</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h3 className="title is-4">Contributing</h3>
+                <SectionItem heading="Contributing">
                     <p>
                         Just having a "Contributing" section in your README is a
                         good start. Another approach is to split off your
@@ -671,24 +719,18 @@ Please make sure to update tests as appropriate.
                         </a>{" "}
                         will use the templates automatically.
                     </p>
-                </div>
-            </section>
+                </SectionItem>
+            </Section>
 
-            <footer
-                id="footer"
-                className="footer content has-text-centered has-background-light"
-            >
-                <p>
-                    Make a README is maintained by{" "}
-                    <a href="https://dannyguo.com">Danny Guo</a>, hosted on{" "}
-                    <a href="https://github.com/dguo/make-a-readme">GitHub</a>{" "}
-                    with a{" "}
-                    <a href="https://github.com/dguo/make-a-readme/blob/main/LICENSE">
-                        MIT license
-                    </a>
-                    , and powered by{" "}
-                    <a href="https://www.netlify.com/">Netlify</a>.
-                </p>
+            <footer className="lg:text-center bg-gray-100 p-8">
+                Make a README is maintained by{" "}
+                <a href="https://dannyguo.com">Danny Guo</a>, hosted on{" "}
+                <a href="https://github.com/dguo/make-a-readme">GitHub</a> with
+                a{" "}
+                <a href="https://github.com/dguo/make-a-readme/blob/main/LICENSE">
+                    MIT license
+                </a>
+                , and powered by <a href="https://www.netlify.com/">Netlify</a>.
             </footer>
 
             <Script

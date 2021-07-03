@@ -27,8 +27,8 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Check formatting
               run: yarn run format:check
-            - name: Lint the code
-              run: yarn run lint
+            # - name: Lint the code
+            #   run: yarn run lint
             - name: Export the website
               run: yarn run export
             - name: Run Lighthouse

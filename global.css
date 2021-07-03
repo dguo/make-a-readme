@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-sans text-gray-700;
+    }
+
+    h1 {
+        @apply text-4xl font-bold;
+    }
+
+    *:not(#rendered) > h2 {
+        @apply text-3xl font-bold mb-6 text-center;
+    }
+
+    h3 {
+        @apply text-2xl font-bold mb-4;
+    }
+
+    p {
+        @apply mt-3;
+    }
+
+    #rendered ul {
+        @apply list-disc;
+    }
+
+    #rendered ol {
+        @apply list-decimal;
+    }
+
+    code {
+        @apply bg-gray-100 p-1 rounded-md;
+    }
+
+    a {
+        @apply text-blue-600;
+    }
+
+    a:hover {
+        @apply underline;
+    }
+}
+
+a.anchorjs-link:hover {
+    @apply no-underline;
+}
+
+#template h2 > a.anchorjs-link,
+#faq h2 > a.anchorjs-link {
+    @apply text-blue-400;
+}
