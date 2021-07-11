@@ -3,8 +3,9 @@ import Script from "next/script";
 import GitHubCorner from "react-github-corner";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle, faFileAlt} from "@fortawesome/free-solid-svg-icons";
-import TextareaAutosize from "react-textarea-autosize";
 import {PropsWithChildren} from "react";
+
+import {Template} from "../components/Template";
 
 type SectionProps = PropsWithChildren<{
     heading: string;
@@ -296,67 +297,7 @@ export default function Home() {
                 </SectionItem>
             </Section>
 
-            <section id="template" className="bg-medium-gray pb-10">
-                <h2 className="text-white pt-10">Template</h2>
-
-                <div className="flex justify-center flex-wrap">
-                    <div className="flex-1 m-3 max-w-5xl">
-                        <p className="text-white text-center text-xl font-bold mt-0 mb-4">
-                            <label htmlFor="markdown-input">
-                                Markdown Input (editable)
-                            </label>
-                        </p>
-                        <TextareaAutosize
-                            id="markdown-input"
-                            className="bg-white w-full p-4 rounded-lg pt-0 pb-4 font-mono text-sm"
-                            defaultValue={`
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-\`\`\`bash
-pip install foobar
-\`\`\`
-
-## Usage
-
-\`\`\`python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-\`\`\`
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)`}
-                        />
-                    </div>
-                    <div className="flex-1 m-3 max-w-5xl">
-                        <p className="text-white text-center text-xl font-bold mt-0 mb-4">
-                            Rendered
-                        </p>
-                        <div
-                            id="rendered"
-                            className="markdown-body bg-white p-4 rounded-lg"
-                        ></div>
-                    </div>
-                </div>
-            </section>
+            <Template />
 
             <Section heading="Suggestions for a good README">
                 <p className="mb-8 mx-4">
@@ -737,18 +678,15 @@ Please make sure to update tests as appropriate.
                 strategy="beforeInteractive"
                 src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"
             />
-            <Script
-                strategy="beforeInteractive"
-                src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"
-            />
-            <Script
-                strategy="beforeInteractive"
-                src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
-            />
-            <Script src="index.js" />
-            <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />
             <Script>
                 {`
+                    window.anchors.options.placement = "left";
+                    // One of the longer FAQ questions doesn't work with the default
+                    // truncate value. The anchor link looks fine, but Chrome doesn't
+                    // jump to it when loading in a new tab.
+                    window.anchors.options.truncate = 50;
+                    window.anchors.add();
+
                     window.dataLayer = window.dataLayer || [];
                     function gtag() {
                         dataLayer.push(arguments);
@@ -757,6 +695,7 @@ Please make sure to update tests as appropriate.
                     gtag("config", "UA-104519836-1");
                 `}
             </Script>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />
         </>
     );
 }
