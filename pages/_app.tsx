@@ -1,6 +1,5 @@
-import "../global.css";
 import "github-markdown-css/github-markdown.css";
-import "highlight.js/styles/a11y-light.css";
+import "../global.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {config} from "@fortawesome/fontawesome-svg-core";
