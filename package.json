@@ -18,11 +18,13 @@
         "@fortawesome/free-solid-svg-icons": "5.15.3",
         "@fortawesome/react-fontawesome": "0.1.14",
         "github-markdown-css": "4.0.0",
-        "highlight.js": "11.0.1",
+        "highlight.js": "11.1.0",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-github-corner": "2.5.0",
-        "react-textarea-autosize": "8.3.3"
+        "react-markdown": "6.0.2",
+        "react-textarea-autosize": "8.3.3",
+        "rehype-highlight": "4.1.0"
     },
     "devDependencies": {
         "@types/react": "17.0.11",
