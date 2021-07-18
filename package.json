@@ -22,12 +22,15 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-github-corner": "2.5.0",
-        "react-markdown": "6.0.2",
+        "react-markdown": "5.0.3",
+        "react-syntax-highlighter": "15.4.3",
         "react-textarea-autosize": "8.3.3",
-        "rehype-highlight": "4.1.0"
+        "rehype-highlight": "4.1.0",
+        "remark-highlight.js": "6.0.0"
     },
     "devDependencies": {
         "@types/react": "17.0.11",
+        "@types/react-syntax-highlighter": "13.5.2",
         "autoprefixer": "10.2.6",
         "next": "11.0.1",
         "postcss": "8.3.5",
