@@ -2,8 +2,6 @@ import {useState} from "react";
 import ReactMarkdown from "react-markdown";
 import TextareaAutosize from "react-textarea-autosize";
 import SyntaxHighlighter from "./SyntaxHighlighter";
-// import foo from "remark-highlight.js";
-// import rehypeHighlight from "rehype-highlight";
 
 const initialTemplate = `# Foobar
 
@@ -72,20 +70,6 @@ export function Template() {
                         className="markdown-body bg-white p-4 rounded-lg"
                     >
                         <ReactMarkdown renderers={{code: SyntaxHighlighter}}>
-                            {/* <ReactMarkdown
-                            // remarkPlugins={[[foo, {include: ["JavaScript"]}]]}
-                            rehypePlugins={[
-                                [
-                                    rehypeHighlight,
-                                    {
-                                        ignoreMissing: true,
-                                        languages: {
-                                            python: require("highlight.js/lib/languages/python")
-                                        }
-                                    }
-                                ]
-                            ]}
-                        > */}
                             {template}
                         </ReactMarkdown>
                     </div>

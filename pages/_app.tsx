@@ -1,4 +1,3 @@
-import "highlight.js/styles/a11y-light.css";
 import "github-markdown-css/github-markdown.css";
 import "../global.css";
 
