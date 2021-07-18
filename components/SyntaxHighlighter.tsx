@@ -2,9 +2,9 @@ import {Light} from "react-syntax-highlighter";
 // import {a11yLight} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import {gruvboxDark} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-// import python from "react-syntax-highlighter/dist/cjs/languages/hljs/python";
+import python from "react-syntax-highlighter/dist/cjs/languages/hljs/python";
 
-// Foo.registerLanguage("python", python);
+Light.registerLanguage("python", python);
 
 function SyntaxHighlighter(props) {
     return (
