@@ -105,6 +105,11 @@ export default function Home() {
                     type="image/x-icon"
                     href="images/favicon.ico"
                 />
+
+                <script
+                    async
+                    src="https://media.ethicalads.io/media/client/ethicalads.min.js"
+                ></script>
             </Head>
 
             <GitHubCorner
@@ -113,7 +118,7 @@ export default function Home() {
                 octoColor="#404040"
             />
 
-            <header className="bg-gradient-to-br from-dark-gray via-medium-gray to-light-gray text-center text-white py-32">
+            <header className="bg-gradient-to-br from-dark-gray via-medium-gray to-light-gray text-center text-white py-24">
                 <span className="mb-6 fa-layers fa-fw fa-5x">
                     <FontAwesomeIcon icon={faCircle} />
                     <FontAwesomeIcon
@@ -132,45 +137,12 @@ export default function Home() {
                 </p>
             </header>
 
-            <aside className="flex justify-center items-center border-b-2 p-3 space-x-3">
-                <a
-                    href="https://readme.com"
-                    target="_blank"
-                    rel="noopener sponsored"
-                >
-                    <picture>
-                        <source
-                            srcSet="images/owlbert.webp"
-                            type="image/webp"
-                        />
-                        <img
-                            src="images/owlbert.jpg"
-                            alt="ReadMe Owlbert"
-                            width="281"
-                            height="240"
-                            className="max-w-130px"
-                        />
-                    </picture>
-                </a>
-                <div className="max-w-sm space-y-5">
-                    <p className="text-gray-500 text-sm mt-0 leading-5">
-                        Need an interactive developer hub, complete with
-                        documentation, reference guides, tutorials, realtime API
-                        logs and community?{" "}
-                        <a
-                            href="https://readme.com"
-                            target="_blank"
-                            rel="noopener sponsored"
-                        >
-                            Try ReadMe.com!
-                        </a>
-                    </p>
-                    <p className="text-gray-500 leading-4">
-                        <small className="text-xs ">
-                            Make a README is proudly sponsored by ReadMe.com
-                        </small>
-                    </p>
-                </div>
+            <aside className="flex justify-center border-b-2 pt-2">
+                <div
+                    className="horizontal"
+                    data-ea-publisher="makeareadmecom"
+                    data-ea-type="image"
+                ></div>
             </aside>
 
             <Section heading="README 101">
