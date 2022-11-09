@@ -105,11 +105,6 @@ export default function Home() {
                     type="image/x-icon"
                     href="images/favicon.ico"
                 />
-
-                <script
-                    async
-                    src="https://media.ethicalads.io/media/client/ethicalads.min.js"
-                ></script>
             </Head>
 
             <GitHubCorner
@@ -667,6 +662,7 @@ export default function Home() {
                     gtag("config", "UA-104519836-1");
                 `}
             </Script>
+            <Script src="https://media.ethicalads.io/media/client/ethicalads.min.js" />
             <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />
         </>
     );
