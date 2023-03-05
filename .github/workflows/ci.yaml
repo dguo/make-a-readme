@@ -15,12 +15,12 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version-file: ".tool-versions"
-            - name: Get the Yarn cache
-              id: yarn-cache
-              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Get the Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
             - uses: actions/cache@v3
               with:
-                  path: ${{ steps.yarn-cache.outputs.dir }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
                   restore-keys: |
                       ${{ runner.os }}-yarn-
