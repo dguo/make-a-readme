@@ -40,5 +40,6 @@
         "bracketSpacing": false,
         "tabWidth": 4,
         "trailingComma": "none"
-    }
+    },
+    "packageManager": "yarn@3.6.0"
 }
