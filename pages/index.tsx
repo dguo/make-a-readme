@@ -663,6 +663,11 @@ export default function Home() {
                 `}
             </Script>
             <Script src="https://media.ethicalads.io/media/client/ethicalads.min.js" />
+            <Script
+                src="/lava-cake/js/script.js"
+                data-api="/lava-cake/api/event"
+                data-domain="makeareadme.com"
+            />
             <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />
         </>
     );
