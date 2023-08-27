@@ -511,41 +511,6 @@ export default function Home() {
             </section>
 
             <Section heading="What's next?">
-                <SectionItem heading="License">
-                    <p>
-                        If your project is{" "}
-                        <a href="https://en.wikipedia.org/wiki/Open-source_software">
-                            open source
-                        </a>
-                        , it's{" "}
-                        <a href="https://blog.codinghorror.com/pick-a-license-any-license/">
-                            important
-                        </a>{" "}
-                        to include a{" "}
-                        <a href="https://en.wikipedia.org/wiki/Open-source_license">
-                            license
-                        </a>
-                        . You can use{" "}
-                        <a href="https://choosealicense.com/">this website</a>{" "}
-                        to help you pick one.
-                    </p>
-                </SectionItem>
-
-                <SectionItem heading="Changelog">
-                    <p>
-                        Make a README is inspired by{" "}
-                        <a href="http://keepachangelog.com/">
-                            Keep a Changelog
-                        </a>
-                        . A{" "}
-                        <a href="https://en.wikipedia.org/wiki/Changelog">
-                            changelog
-                        </a>{" "}
-                        is another file that is very useful for programming
-                        projects.
-                    </p>
-                </SectionItem>
-
                 <SectionItem heading="More Documentation">
                     <p>
                         A README is a crucial but basic way of documenting your
@@ -594,6 +559,72 @@ export default function Home() {
                             <a href="https://docsify.js.org/">Docsify</a>
                         </li>
                     </ul>
+                    <p>
+                        And to learn more about technical documentation in
+                        general, consider reading these books (I may earn
+                        commissions if you buy through these links):
+                    </p>
+                    <ul className="list-disc ml-8 my-4 space-y-3">
+                        <li>
+                            <a href="https://www.amazon.com/Docs-Developers-Engineers-Technical-Writing/dp/1484272161?crid=3UFJEYT8RH8YE&keywords=docs+for+developers&qid=1693139345&sprefix=docs+for+developers%2Caps%2C388&sr=8-1&linkCode=ll1&tag=makeareadme-20&linkId=2a9cf45448f33a4b8445aff149d1b1de&language=en_US&ref_=as_li_ss_tl">
+                                Docs for Developers: An Engineer’s Field Guide
+                                to Technical Writing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.amazon.com/Developing-Quality-Technical-Information-Handbook/dp/0133118975?crid=H49KJII3EIZ0&keywords=Developing+Quality+Technical+Information&qid=1693139665&sprefix=developing+quality+technical+information%2Caps%2C119&sr=8-1&linkCode=ll1&tag=makeareadme-20&linkId=98fdee518cca91c599b15bad8c4f8dd0&language=en_US&ref_=as_li_ss_tl">
+                                Developing Quality Technical Information: A
+                                Handbook for Writers and Editors
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.amazon.com/Docs-Like-Code-Collaborate-Documentation/dp/1387531492?crid=YXD5PKZUVZOU&keywords=docs+like+code&qid=1693139906&sprefix=docs+like+co%2Caps%2C340&sr=8-1&linkCode=ll1&tag=makeareadme-20&linkId=452497692487d954ffb6531d6352bfcc&language=en_US&ref_=as_li_ss_tl">
+                                Docs Like Code: Collaborate and Automate to
+                                Improve Technical Documentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.amazon.com/Product-Docs-technical-documentation-development/dp/B085KK6G8F?_encoding=UTF8&qid=1693139996&sr=8-1&linkCode=ll1&tag=makeareadme-20&linkId=dd5ac7674a48797a69c3f7fd51a72b80&language=en_US&ref_=as_li_ss_tl">
+                                The Product is Docs: Writing Technical
+                                Documentation in a Product Development Group
+                            </a>
+                        </li>
+                    </ul>
+                </SectionItem>
+
+                <SectionItem heading="License">
+                    <p>
+                        If your project is{" "}
+                        <a href="https://en.wikipedia.org/wiki/Open-source_software">
+                            open source
+                        </a>
+                        , it's{" "}
+                        <a href="https://blog.codinghorror.com/pick-a-license-any-license/">
+                            important
+                        </a>{" "}
+                        to include a{" "}
+                        <a href="https://en.wikipedia.org/wiki/Open-source_license">
+                            license
+                        </a>
+                        . You can use{" "}
+                        <a href="https://choosealicense.com/">this website</a>{" "}
+                        to help you pick one.
+                    </p>
+                </SectionItem>
+
+                <SectionItem heading="Changelog">
+                    <p>
+                        Make a README is inspired by{" "}
+                        <a href="http://keepachangelog.com/">
+                            Keep a Changelog
+                        </a>
+                        . A{" "}
+                        <a href="https://en.wikipedia.org/wiki/Changelog">
+                            changelog
+                        </a>{" "}
+                        is another file that is very useful for programming
+                        projects.
+                    </p>
                 </SectionItem>
 
                 <SectionItem heading="Contributing">
@@ -630,15 +661,26 @@ export default function Home() {
                 </SectionItem>
             </Section>
 
-            <footer className="lg:text-center bg-gray-100 p-8">
-                Make a README is maintained by{" "}
-                <a href="https://dannyguo.com">Danny Guo</a>, hosted on{" "}
-                <a href="https://github.com/dguo/make-a-readme">GitHub</a> with
-                a{" "}
-                <a href="https://github.com/dguo/make-a-readme/blob/main/LICENSE">
-                    MIT license
-                </a>
-                , and powered by <a href="https://www.netlify.com/">Netlify</a>.
+            <footer className="flex justify-center bg-gray-100 pt-2 pb-5">
+                <div className="max-w-prose px-4">
+                    <p>
+                        Make a README is maintained by{" "}
+                        <a href="https://dannyguo.com">Danny Guo</a>, hosted on{" "}
+                        <a href="https://github.com/dguo/make-a-readme">
+                            GitHub
+                        </a>{" "}
+                        with a{" "}
+                        <a href="https://github.com/dguo/make-a-readme/blob/main/LICENSE">
+                            MIT license
+                        </a>
+                        , and powered by{" "}
+                        <a href="https://www.netlify.com/">Netlify</a>.
+                    </p>
+                    <p>
+                        As an Amazon Associate, I earn from qualifying
+                        purchases.
+                    </p>
+                </div>
             </footer>
 
             <Script
