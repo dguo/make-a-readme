@@ -132,7 +132,7 @@ export default function Home() {
                 </p>
             </header>
 
-            <aside className="flex justify-center border-b-2 pt-2">
+            <aside id="ethicalads-section" className="flex justify-center">
                 <div
                     className="horizontal"
                     data-ea-publisher="makeareadmecom"
@@ -662,7 +662,14 @@ export default function Home() {
                     gtag("config", "UA-104519836-1");
                 `}
             </Script>
-            <Script src="https://media.ethicalads.io/media/client/ethicalads.min.js" />
+            <Script
+                src="https://media.ethicalads.io/media/client/ethicalads.min.js"
+                onLoad={() => {
+                    document
+                        .getElementById("ethicalads-section")
+                        .classList.add("border-b-2", "pt-2");
+                }}
+            />
             <Script
                 src="/lava-cake/js/script.js"
                 data-api="/lava-cake/api/event"
