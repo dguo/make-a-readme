@@ -2,12 +2,6 @@
   command = "yarn run export"
   publish = "build"
 
-# For Plausible proxying:
-# https://plausible.io/docs/proxy/guides/netlify#troubleshooting
-[build.processing.js]
-  bundle = false
-  minify = false
-
 # Plausible
 [[redirects]]
   from = "/lava-cake/js/script.js"
