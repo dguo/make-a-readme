@@ -1,3 +1,4 @@
 *.md
 .next/
+.yarn/
 build/
