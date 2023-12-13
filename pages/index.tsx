@@ -257,7 +257,7 @@ export default function Home() {
                     <p>
                         You can also use a dedicated Markdown editor like{" "}
                         <a href="https://typora.io/">Typora</a> or an online one
-                        like <a href="https://stackedit.io/editor">StackEdit</a>{" "}
+                        like <a href="https://stackedit.io/app">StackEdit</a>{" "}
                         or <a href="http://dillinger.io/">Dillinger</a>. You can
                         even use the editable template below.
                     </p>
