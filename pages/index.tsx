@@ -701,7 +701,7 @@ export default function Home() {
                         dataLayer.push(arguments);
                     }
                     gtag("js", new Date());
-                    gtag("config", "UA-104519836-1");
+                    gtag("config", "G-2BK72SW7BH");
                 `}
             </Script>
             <Script
@@ -717,7 +717,7 @@ export default function Home() {
                 data-api="/lava-cake/api/event"
                 data-domain="makeareadme.com"
             />
-            <Script src="https://www.googletagmanager.com/gtag/js?id=UA-104519836-1" />
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-2BK72SW7BH" />
         </>
     );
 }
