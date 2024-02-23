@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import TextareaAutosize from "react-textarea-autosize";
 import SyntaxHighlighter from "./SyntaxHighlighter";
 
-const initialTemplate = `# Foobar
+const INITIAL_TEMPLATE = `# Foobar
 
 Foobar is a Python library for dealing with word pluralization.
 
@@ -42,7 +42,7 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)`;
 
 export function Template() {
-    const [template, setTemplate] = useState(initialTemplate);
+    const [template, setTemplate] = useState(INITIAL_TEMPLATE);
 
     return (
         <section id="template" className="bg-medium-gray pb-10">

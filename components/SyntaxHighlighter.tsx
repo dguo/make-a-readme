@@ -2,19 +2,19 @@ import {LightAsync} from "react-syntax-highlighter";
 import {a11yDark} from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 function SyntaxHighlighter(props) {
-    const {children, className, node, ...rest} = props;
-    const match = /language-(\w+)/.exec(className || "");
-
+    const {children, className} = props;
     if (!children) {
         return null;
     }
 
+    // An example className is "language-python"
+    const languageMatch = /language-(\w+)/.exec(className || "");
+
     return (
         <LightAsync
-            {...rest}
             PreTag="div"
-            children={String(children).replace(/\n$/, "")}
-            language={match?.[1] ?? "txt"}
+            children={children}
+            language={languageMatch?.[1] ?? "txt"}
             style={a11yDark}
         />
     );
