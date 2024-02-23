@@ -9,18 +9,14 @@ function SyntaxHighlighter(props) {
         return null;
     }
 
-    return match ? (
+    return (
         <LightAsync
             {...rest}
             PreTag="div"
             children={String(children).replace(/\n$/, "")}
-            language={match[1]}
+            language={match?.[1] ?? "txt"}
             style={a11yDark}
         />
-    ) : (
-        <code {...rest} className={className}>
-            {children}
-        </code>
     );
 }
 
