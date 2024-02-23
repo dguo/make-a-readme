@@ -54,7 +54,7 @@ a.anchorjs-link:hover {
 }
 
 /* For code examples in the rendered template, avoid padding because the div
-   that comes with react-syntax-highliter handles it. */
+   that comes with react-syntax-highlighter has padding. */
 .markdown-body pre {
     padding: 0px;
 }
