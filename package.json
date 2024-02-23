@@ -5,7 +5,6 @@
     "scripts": {
         "dev": "yarn install && next dev",
         "build": "next build",
-        "export": "next build && next export -o build",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
@@ -14,27 +13,27 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "6.2.0",
-        "@fortawesome/free-solid-svg-icons": "6.2.0",
+        "@fortawesome/fontawesome-svg-core": "6.5.1",
+        "@fortawesome/free-solid-svg-icons": "6.5.1",
         "@fortawesome/react-fontawesome": "0.2.0",
-        "github-markdown-css": "5.1.0",
+        "github-markdown-css": "5.5.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-github-corner": "2.5.0",
-        "react-markdown": "5.0.3",
+        "react-markdown": "9.0.1",
         "react-syntax-highlighter": "15.5.0",
-        "react-textarea-autosize": "8.4.1"
+        "react-textarea-autosize": "8.5.3"
     },
     "devDependencies": {
-        "@types/node": "18.11.9",
-        "@types/react": "18.0.25",
-        "@types/react-syntax-highlighter": "15.5.5",
-        "autoprefixer": "10.4.13",
-        "next": "13.5.1",
-        "postcss": "8.4.31",
-        "prettier": "2.7.1",
-        "tailwindcss": "3.2.2",
-        "typescript": "4.8.4"
+        "@types/node": "20.11.20",
+        "@types/react": "18.2.57",
+        "@types/react-syntax-highlighter": "15.5.11",
+        "autoprefixer": "10.4.17",
+        "next": "14.1.0",
+        "postcss": "8.4.35",
+        "prettier": "3.2.5",
+        "tailwindcss": "3.4.1",
+        "typescript": "5.3.3"
     },
     "prettier": {
         "bracketSpacing": false,

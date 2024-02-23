@@ -72,7 +72,7 @@ export function Template() {
                         id="rendered"
                         className="markdown-body bg-white p-4 rounded-lg"
                     >
-                        <ReactMarkdown renderers={{code: SyntaxHighlighter}}>
+                        <ReactMarkdown components={{code: SyntaxHighlighter}}>
                             {template}
                         </ReactMarkdown>
                     </div>

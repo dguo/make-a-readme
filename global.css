@@ -52,3 +52,9 @@ a.anchorjs-link:hover {
 #faq h2 > a.anchorjs-link {
     @apply text-blue-400;
 }
+
+/* For code examples in the rendered template, avoid padding because the div
+   that comes with react-syntax-highliter handles it. */
+.markdown-body pre {
+    padding: 0px;
+}
