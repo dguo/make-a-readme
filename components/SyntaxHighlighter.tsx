@@ -20,9 +20,16 @@ function SyntaxHighlighter(props) {
        have a language identifier, though GitHub supports that:
        https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#fenced-code-blocks
 
-       It is rendered as an inline code element instead of a plain text code
-       block. See this issue for more context:
+       It is rendered as an inline code element instead of a code block. See
+       this issue for more context:
        https://github.com/remarkjs/react-markdown/issues/776
+
+       If we could distinguish between inline code and code blocks, we could
+       still use the syntax highlighter and pass in plain text for the language.
+       Instead, our hacky fix for this is to apply CSS by targeting the
+       language-less code blocks and copying over the styling that is provided
+       by github-markdown-css. See the ".markdown-body pre > code" selector in
+       global.css.
     */
     return languageMatch ? (
         <LightAsync
