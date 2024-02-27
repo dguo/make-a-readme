@@ -1,13 +1,13 @@
 [build]
-  command = "yarn run export"
-  publish = "build"
+command = "yarn run build"
+publish = "build"
 
 # Plausible
 [[redirects]]
-  from = "/lava-cake/js/script.js"
-  to = "https://plausible.io/js/script.js"
-  status = 200
+from = "/lava-cake/js/script.js"
+to = "https://plausible.io/js/script.js"
+status = 200
 [[redirects]]
-  from = "/lava-cake/api/event"
-  to = "https://plausible.io/api/event"
-  status = 200
+from = "/lava-cake/api/event"
+to = "https://plausible.io/api/event"
+status = 200

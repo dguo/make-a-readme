@@ -52,3 +52,19 @@ a.anchorjs-link:hover {
 #faq h2 > a.anchorjs-link {
     @apply text-blue-400;
 }
+
+/* For code examples in the rendered template, avoid padding because the div
+   that comes with react-syntax-highlighter has padding. */
+.markdown-body pre {
+    padding: 0px;
+}
+
+/* This is a hacky fix for an issue with syntax highlighting. See the comment in
+   SyntaxHighlighter.tsx. */
+.markdown-body pre > code {
+    display: block;
+    overflow-x: auto;
+    background: rgb(43, 43, 43);
+    color: rgb(248, 248, 242);
+    padding: 0.5em;
+}
