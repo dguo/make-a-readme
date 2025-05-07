@@ -1,0 +1,26 @@
+# Toxic Content Detector
+
+This is a simple web app that detects toxic or offensive content in English text. It uses the `unitary/toxic-bert` model from Hugging Face and is built with the Transformers and Gradio libraries.
+
+## 🔍 Features
+
+- Detects multiple types of toxicity:
+  - Toxic
+  - Insult
+  - Obscene
+  - Threat
+  - Identity hate
+  - Severe toxicity
+- Easy-to-use web interface
+- Real-time feedback
+
+## 🧠 Model Used
+
+- [`unitary/toxic-bert`](https://huggingface.co/unitary/toxic-bert): A fine-tuned BERT model for multi-label toxicity classification.
+
+## 💻 Installation
+
+Make sure you have Python installed, then install the required libraries:
+
+```bash
+pip install transformers gradio torch
