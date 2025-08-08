@@ -2,6 +2,7 @@ import {useState} from "react";
 import ReactMarkdown from "react-markdown";
 import TextareaAutosize from "react-textarea-autosize";
 import SyntaxHighlighter from "./SyntaxHighlighter";
+import remarkGfm from "remark-gfm";
 
 const INITIAL_TEMPLATE = `# Foobar
 
@@ -72,7 +73,10 @@ export function Template() {
                         id="rendered"
                         className="markdown-body bg-white p-4 rounded-lg"
                     >
-                        <ReactMarkdown components={{code: SyntaxHighlighter}}>
+                        <ReactMarkdown
+                            components={{code: SyntaxHighlighter}}
+                            remarkPlugins={[remarkGfm]}
+                        >
                             {template}
                         </ReactMarkdown>
                     </div>
