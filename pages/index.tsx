@@ -259,6 +259,17 @@ export default function Home() {
                         <a href="http://dillinger.io/">Dillinger</a>. You can
                         even use the editable template below.
                     </p>
+                    <p>
+                        If you iterate on a README with an AI coding agent,{" "}
+                        <a href="https://markdown.madebyolof.com/">
+                            markdown.madebyolof.com
+                        </a>{" "}
+                        shows the differences from the previous version, so you
+                        don't have to reread the whole file each time. It uses a
+                        rendered diff with clear typography, and your agent can
+                        open it for you in the browser. It's free, with no
+                        installation, skills or MCP setup required.
+                    </p>
                 </SectionItem>
             </Section>
 
